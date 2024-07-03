@@ -1,7 +1,8 @@
 // cards.js
-import wormImage from '/home/olymarks/JS-Projects/Crab de Jour/src/assets/imgs/bait/bait-worm.png';
-import fishImage from '/home/olymarks/JS-Projects/Crab de Jour/src/assets/imgs/bait/bait-fish.png';
-import crabCrackImage from '/home/olymarks/JS-Projects/Crab de Jour/src/assets/imgs/bait/bait-crab-crack.png'; 
+import wormImage from '../assets/imgs/bait/bait-worm.png';
+import fishImage from '../assets/imgs/bait/bait-fish.png';
+import crabCrackImage from '../assets/imgs/bait/bait-crab-crack.png';
+; 
 
 // react version of services, dependency injection
 
