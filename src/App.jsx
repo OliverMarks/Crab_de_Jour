@@ -5,7 +5,7 @@ import Shop from './components/shop';
 import PlayerHand from './components/player-hand';
 import PlayerStats from './components/playerStats';
 import CatchLog from './components/catchLog' ; 
-import wormImage from '/home/olymarks/JS-Projects/Crab de Jour/src/assets/imgs/bait/bait-worm.png';
+// import wormImage from '/home/olymarks/JS-Projects/Crab de Jour/src/assets/imgs/bait/bait-worm.png';
 import GameController from './components/gameController';
 
 import './App.css';
@@ -61,7 +61,41 @@ function App() {
       // controller component 
 
   const [roundNumber, setRoundNumber] = useState(1)
-  const [activePools, setActivePools] = useState([1, 2, 3, 4, 5, 6])
+  // changed active pools to array of objects
+  const [activePools, setActivePools] = useState([
+    
+    {
+    poolPosition: 1,
+    poolDifficulty: 1,
+    rollSuccess: undefined
+    },
+    {
+    poolPosition: 2,
+    poolDifficulty: 2,
+    rollSuccess: undefined
+    },
+    {
+    poolPosition: 3,
+    poolDifficulty: 3,
+    rollSuccess: undefined
+    },
+    {
+    poolPosition: 4,
+    poolDifficulty: 4,
+    rollSuccess: undefined
+    },
+    {
+    poolPosition: 5,
+    poolDifficulty: 5,
+    rollSuccess: undefined
+    },
+    {
+      poolPosition: 6,
+      poolDifficulty: 6,
+      rollSuccess: undefined
+      },
+
+  ])
 
 
   
@@ -104,6 +138,7 @@ function App() {
     setHasCaught={setHasCaught}
     roundNumber={roundNumber}
     setRoundNumber={setRoundNumber}
+    setActivePools={setActivePools}
     
     />
       

@@ -196,6 +196,11 @@
   background-color: aqua;
 }
 
+.catch-image {
+  height: 100px;
+  width: 100px;
+}
+
 
 /* tide table  */
 .tg  {
