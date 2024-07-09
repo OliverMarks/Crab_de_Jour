@@ -273,10 +273,15 @@ padding: 3px;
 
 
 .player-tank {
-  background-color: aqua;
+  background-image: url(./assets/imgs/bg/underwater.jpg);
+  background-size: cover;
   border: solid, black, 2px;
   height: 200px;
-  width: 400px
+  width: 400px; 
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: end;
 }
 
 .tank-crab {
