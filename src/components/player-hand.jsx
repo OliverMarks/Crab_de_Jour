@@ -1,5 +1,6 @@
 
 import Card from './card'
+import PlayerTank from './player-tank';
 import { useEffect, useState } from 'react';
 
 
@@ -76,6 +77,12 @@ export default function PlayerHand ({players, setPlayers, locked}) {
                 <div className="playerHand-orders">
                   
                   </div>
+
+
+            Crab Tank
+            <PlayerTank 
+            players = {players}
+            />
    
         </div>
         
