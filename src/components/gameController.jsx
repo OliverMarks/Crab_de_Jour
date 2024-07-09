@@ -54,6 +54,7 @@ export default function GameController ({locked, setLocked, players, setPlayers,
         // dice rolls
         const roll1 = 1 + Math.floor(Math.random() * 6);
         const roll2 = 1 + Math.floor(Math.random() * 6);
+        let caughtCrabs = []
         let crabs = 0;
         let trash = 0;
         // test dice roll 1
@@ -62,6 +63,8 @@ export default function GameController ({locked, setLocked, players, setPlayers,
         if (roll1 + players.currentModifier >= players.selectedPools[0]) {
             const success1 = `Catch roll 1: Required ${players.selectedPools[0]}, Roll: ${roll1}, Modifiers: ${players.currentModifier} Result: Wowzers, you rolled you got a crab!`;
             crabs++;
+            caughtCrabs.push(players.selectedPools[0])
+            console.log(caughtCrabs)
             setPlayers(prevPlayers => ({
                 ...prevPlayers,
                 catchLog: [...prevPlayers.catchLog, success1]
@@ -82,11 +85,13 @@ export default function GameController ({locked, setLocked, players, setPlayers,
 
 
         // test dice roll 2
-        // set a timeout? 
+     
         setTimeout(() => {
 
         if (roll2 + players.currentModifier >= players.selectedPools[1]) {
             const success2 = `Catch roll 2: Required ${players.selectedPools[1]}, Roll: ${roll2}, Modifiers: ${players.currentModifier} Result: Wowzers, you rolled you got a crab!`;
+            caughtCrabs.push(players.selectedPools[1])
+            console.log(caughtCrabs)
             crabs++;
             setPlayers(prevPlayers => ({
                 ...prevPlayers,
@@ -108,6 +113,7 @@ export default function GameController ({locked, setLocked, players, setPlayers,
             // update players crabs and coins and generate the summary 
         
             setTimeout(() => {
+                console.log(caughtCrabs)
                 const updatedCrabs = Number(players.crabs) + Number(crabs);
                 const updatedCoins = players.coins + trash;
                 const catchingSummary = trash > 0 
@@ -116,12 +122,12 @@ export default function GameController ({locked, setLocked, players, setPlayers,
             
                 setPlayers(prevPlayers => ({
                     ...prevPlayers,
-                    crabs: updatedCrabs,
+                    crabs: [...prevPlayers.crabs, ...caughtCrabs],
                     coins: updatedCoins,
                     catchLog: [...prevPlayers.catchLog, catchingSummary]
                 }));
-            
-                console.log(crabs);
+                
+                console.log(players.crabs);
             }, 3000);
             
 

@@ -35,7 +35,7 @@ export default function PlayerTank({ players }) {
   return (
     <div className="player-tank">
       {players.crabs.map((crab, index) => (
-        <img key={index} src={selectCrabImage(crab)} alt='crab' />
+        <img className='tank-crab' key={index} src={selectCrabImage(crab)} alt='crab' />
       ))}
     </div>
   );

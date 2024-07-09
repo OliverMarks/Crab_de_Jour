@@ -11,7 +11,7 @@ export default function PlayerStats({players}) {
             <h3>Active Player: {players.name}</h3>
             <h3>Coins: {players.coins}</h3>
             <h3>Current Modifier: {players.currentModifier}</h3>
-            <h3>Crab Count: {players.crabs}</h3>
+           
             <p>crab types
 1-2 mud,
 3-4 blue,
