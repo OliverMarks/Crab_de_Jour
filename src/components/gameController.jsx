@@ -2,7 +2,7 @@
 import { useState } from 'react';
 
 
-export default function GameController ({locked, setLocked, players, setPlayers, hasCaught, setHasCaught, roundNumber, setRoundNumber}) {
+export default function GameController ({locked, setLocked, players, setPlayers, hasCaught, setHasCaught, roundNumber, setRoundNumber, setActivePools}) {
 
 
     const lockInHand = () => {
@@ -21,6 +21,16 @@ export default function GameController ({locked, setLocked, players, setPlayers,
 
 
     const crabbingRolls = () => {
+
+        const updateRollSuccess = (poolDifficulty, success) => {
+            setActivePools(prevPools => 
+              prevPools.map(pool => 
+                pool.poolDifficulty === poolDifficulty 
+                  ? { ...pool, rollSuccess: success } 
+                  : pool
+              )
+            );
+          };
         // dice rolls
         const roll1 = 1 + Math.floor(Math.random() * 6);
         const roll2 = 1 + Math.floor(Math.random() * 6);
@@ -36,6 +46,7 @@ export default function GameController ({locked, setLocked, players, setPlayers,
                 ...prevPlayers,
                 catchLog: [...prevPlayers.catchLog, success1]
             }));
+            updateRollSuccess(players.selectedPools[0], true)
         } else {
             const fail1 = `Catch roll 1: Required ${players.selectedPools[0]}, Roll: ${roll1}, Modifiers: ${players.currentModifier} Result: hard luck, no crab`;
             trash++;
@@ -43,6 +54,7 @@ export default function GameController ({locked, setLocked, players, setPlayers,
                 ...prevPlayers,
                 catchLog: [...prevPlayers.catchLog, fail1]
             }));
+            updateRollSuccess(players.selectedPools[0], false)
         } 
         console.log(crabs)
 
@@ -60,6 +72,7 @@ export default function GameController ({locked, setLocked, players, setPlayers,
                 ...prevPlayers,
                 catchLog: [...prevPlayers.catchLog, success2]
             }));
+            updateRollSuccess(players.selectedPools[1], true)
         } else {
             const fail2 = `Catch roll 2: Required ${players.selectedPools[1]}, Roll: ${roll2}, Modifiers: ${players.currentModifier} Result: hard luck, no crab`;
             trash++;
@@ -67,6 +80,7 @@ export default function GameController ({locked, setLocked, players, setPlayers,
                 ...prevPlayers,
                 catchLog: [...prevPlayers.catchLog, fail2]
             }));
+            updateRollSuccess(players.selectedPools[1], false)
         }
         console.log(crabs)
     }, 2000)
@@ -110,6 +124,13 @@ export default function GameController ({locked, setLocked, players, setPlayers,
           setLocked(!locked)
 
           setRoundNumber(roundNumber + 1) 
+
+          setActivePools(prevPools => 
+            prevPools.map(pool => ({
+            ...pool, rollSuccess: undefined
+            })
+            )
+        )
 
     }
 

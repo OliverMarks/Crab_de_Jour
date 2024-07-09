@@ -1,8 +1,11 @@
 // cards.js
-import wormImage from '../assets/imgs/bait/bait-worm.png';
-import fishImage from '../assets/imgs/bait/bait-fish.png';
-import crabCrackImage from '../assets/imgs/bait/bait-crab-crack.png';
-; 
+
+// import wormImage from 'src/assets/imgs/bait/bait-worm.png';
+// import fishImage from 'src/assets/imgs/bait/bait-fish.png';
+// import crabCrackImage from 'src/assets/imgs/bait/bait-crab-crack.png'; 
+
+
+
 
 // react version of services, dependency injection
 
@@ -10,7 +13,7 @@ const allCards = [
     {
         type: 'Bait',
         title: 'Worm',
-        img: wormImage,
+        // img: wormImage,
         description: '+1 to your catch roll this turn',
         cost: 1,
         effect: function (setPlayers) {
@@ -25,7 +28,7 @@ const allCards = [
     {
         type: 'Bait',
         title: 'Fish',
-        img: fishImage,
+        // img: fishImage,
         description: '+2 to your catch roll this turn',
         cost: 2,
         effect: function (setPlayers) {
@@ -40,7 +43,7 @@ const allCards = [
     {
         type: 'Bait',
         title: 'Crab Crack',
-        img: crabCrackImage,
+        // img: crabCrackImage,
         description: '+3 to your catch roll this turn',
         cost: 3,
         effect: function (setPlayers) {
@@ -54,7 +57,7 @@ const allCards = [
     },
     { type : 'Action',
       title: 'Tidal Surge',
-      img: wormImage,
+      // img: wormImage,
       description:'ignore tide modifiers for your catches this turn',
       cost:2,
       effect: function () {
@@ -65,7 +68,7 @@ const allCards = [
     },
     { type : 'Action',
       title: 'Mooncrooner',
-      img: wormImage,
+      // img: wormImage,
       description:'reverse the tidal modifier for your own catches this turn',
       cost:2,
       effect: function () {
@@ -75,7 +78,7 @@ const allCards = [
     },
     { type : 'Action',
       title: 'Sussy Looking Crab',
-      img: wormImage,
+      // img: wormImage,
       description:'At the end of the game this counts as one crab',
       cost:2,
       effect: function () {
@@ -89,7 +92,7 @@ const allCards = [
 
   { type : 'Companion',
     title: 'Exactatron-3000',
-    img: wormImage,
+    // img: wormImage,
     description:'Each time you roll exactly what is needed (after modifiers) gain an additional crab',
     cost:2,
     effect: function () {
@@ -98,7 +101,7 @@ const allCards = [
   },
   { type : 'Companion',
     title: 'Lucky Pete',
-    img: wormImage,
+    // img: wormImage,
     description:'You may re-roll one of your catch rolls per round',
     cost:2,
     effect: function () {
@@ -108,7 +111,7 @@ const allCards = [
   },
   { type : 'Companion',
     title: 'The Crab Charmer',
-    img: wormImage,
+    // img: wormImage,
     description:'If you roll a double during a catch attempt, gain an additional crab or trash',
     cost:2,
     effect: function () {
