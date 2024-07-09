@@ -12,7 +12,14 @@ export default function PlayerStats({players}) {
             <h3>Coins: {players.coins}</h3>
             <h3>Current Modifier: {players.currentModifier}</h3>
             <h3>Crab Count: {players.crabs}</h3>
-
+            <p>crab types
+1-2 mud,
+3-4 blue,
+5-6 purple,
+7-8 ghost,
+9-10 gold,
+11-12 Jade,
+</p>
             {/* <div>
                 <h2>Crab Haul</h2>
                 {caughtCrabs.map((crab, index) => (
