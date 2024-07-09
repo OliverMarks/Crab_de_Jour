@@ -5,7 +5,6 @@ import Shop from './components/shop';
 import PlayerHand from './components/player-hand';
 import PlayerStats from './components/playerStats';
 import CatchLog from './components/catchLog' ; 
-import wormImage from '/home/olymarks/JS-Projects/Crab de Jour/src/assets/imgs/bait/bait-worm.png';
 import GameController from './components/gameController';
 
 import './App.css';
