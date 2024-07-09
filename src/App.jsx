@@ -62,38 +62,12 @@ function App() {
   const [roundNumber, setRoundNumber] = useState(1)
   // changed active pools to array of objects
   const [activePools, setActivePools] = useState([
-    
-    {
-    poolPosition: 1,
-    poolDifficulty: 1,
-    rollSuccess: undefined
-    },
-    {
-    poolPosition: 2,
-    poolDifficulty: 2,
-    rollSuccess: undefined
-    },
-    {
-    poolPosition: 3,
-    poolDifficulty: 3,
-    rollSuccess: undefined
-    },
-    {
-    poolPosition: 4,
-    poolDifficulty: 4,
-    rollSuccess: undefined
-    },
-    {
-    poolPosition: 5,
-    poolDifficulty: 5,
-    rollSuccess: undefined
-    },
-    {
-    poolPosition: 6,
-    poolDifficulty: 6,
-    rollSuccess: undefined
-    },
-
+    {poolPosition: 1, poolDifficulty: 1, rollSuccess: undefined},
+    {poolPosition: 2, poolDifficulty: 2, rollSuccess: undefined},
+    {poolPosition: 3, poolDifficulty: 3, rollSuccess: undefined},
+    {poolPosition: 4, poolDifficulty: 4, rollSuccess: undefined},
+    {poolPosition: 5, poolDifficulty: 5, rollSuccess: undefined},
+    {poolPosition: 6, poolDifficulty: 6, rollSuccess: undefined},
   ])
 
 
