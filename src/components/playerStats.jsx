@@ -1,7 +1,6 @@
 
 import crabImage from '../assets/imgs/crabs/crab.png'
- images-to-rockpools
-// import crabImage from '/home/olymarks/JS-Projects/Crab de Jour/src/assets/imgs/crabs/crab.png'
+
 
 
 export default function PlayerStats({players}) {
