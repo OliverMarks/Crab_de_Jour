@@ -29,9 +29,9 @@ export default function Rockpool ({players, setPlayers, activePools} ) {
             
             {activePools.map((pool =>
                 <Pool 
-                onClick={() => {addToPlayerSelectedPool(pool)}}
-                className={players.selectedPools.includes(pool) ? 'active-pool pool-container' : 'pool-container'}
-                key = {pool}
+                onClick={() => {addToPlayerSelectedPool(pool.poolDifficulty)}}
+                className={players.selectedPools.includes(pool.poolDifficulty) ? 'active-pool pool-container' : 'pool-container'}
+                key = {pool.poolPosition}
                 pool ={pool}
                 players = {players}
                /> ))}
