@@ -89,10 +89,10 @@ function App() {
     rollSuccess: undefined
     },
     {
-      poolPosition: 6,
-      poolDifficulty: 6,
-      rollSuccess: undefined
-      },
+    poolPosition: 6,
+    poolDifficulty: 6,
+    rollSuccess: undefined
+    },
 
   ])
 
@@ -137,6 +137,7 @@ function App() {
     setHasCaught={setHasCaught}
     roundNumber={roundNumber}
     setRoundNumber={setRoundNumber}
+    activePools= {activePools}
     setActivePools={setActivePools}
     
     />

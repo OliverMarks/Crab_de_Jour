@@ -2,7 +2,7 @@
 import { useState } from 'react';
 
 
-export default function GameController ({locked, setLocked, players, setPlayers, hasCaught, setHasCaught, roundNumber, setRoundNumber, setActivePools}) {
+export default function GameController ({locked, setLocked, players, setPlayers, hasCaught, setHasCaught, roundNumber, setRoundNumber, activePools, setActivePools}) {
 
 
     const lockInHand = () => {
@@ -18,6 +18,26 @@ export default function GameController ({locked, setLocked, players, setPlayers,
     setLocked(true)
     }
     }
+
+    const generateUniqueRandomNumbers = (min, max, count) => {
+        const numbers = new Set();
+        while (numbers.size < count) {
+          const randomNum = Math.floor(Math.random() * (max - min + 1)) + min;
+          numbers.add(randomNum);
+        }
+        return Array.from(numbers);
+      };
+
+      const updatePoolDifficulties = () => {
+        const uniqueRandomNumbers = generateUniqueRandomNumbers(1, 12, activePools.length);
+    
+        const updatedPools = activePools.map((pool, index) => ({
+          ...pool,
+          poolDifficulty: uniqueRandomNumbers[index],
+        }));
+    
+        setActivePools(updatedPools);
+      };
 
 
     const crabbingRolls = () => {
@@ -124,13 +144,16 @@ export default function GameController ({locked, setLocked, players, setPlayers,
           setLocked(!locked)
 
           setRoundNumber(roundNumber + 1) 
-
+            
+          // update pool difficulties
+            updatePoolDifficulties()
           setActivePools(prevPools => 
             prevPools.map(pool => ({
             ...pool, rollSuccess: undefined
             })
             )
         )
+            
 
     }
 
