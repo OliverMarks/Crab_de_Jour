@@ -1,6 +1,6 @@
 import React from 'react';
 import trashImage from '../assets/imgs/crabs/sea-trash.png';
-import crabImage from '../assets/imgs/crabs/pixel-crab.png';
+// import crabImage from '../assets/imgs/crabs/pixel-crab.png';
 import mudCrab from '../assets/imgs/crabs/mud-crab.jpg';
 import blueCrab from '../assets/imgs/crabs/blue-crab.jpg';
 import purpleCrab from '../assets/imgs/crabs/purple-crab.jpg';

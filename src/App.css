@@ -275,19 +275,51 @@ padding: 3px;
 .player-tank {
   background-image: url(./assets/imgs/bg/underwater.jpg);
   background-size: cover;
-  border: solid, black, 2px;
+  border: 5px solid black;
+  border-top: 15px solid black;
+  border-bottom: 15px solid black;
+  
   height: 200px;
   width: 400px; 
   display: flex;
   flex-direction: row;
   justify-content: start;
   align-items: end;
+  flex-wrap:wrap-reverse;
+  gap: 0; /* Ensure there's no gap between flex items */
+  padding: 0; /* Remove any padding from the container */
 }
 
 .tank-crab {
-  height: 25px;
-  width: 25px;
+  margin: 0;
+  padding: 0;
+  height: 50px;
+  width: 50px;
+  position: relative;
+  opacity: 0; /* Initial opacity set to 0 */
+  transform: translateY(-100px); /* Initial position set above */
+  animation: fall 1s forwards; /* Apply animation */
 }
+
+.player-tank:nth-child(1) {
+  animation-delay: 0.2s;
+}
+
+.player-tank:nth-child(2) {
+  animation-delay: 0.4s;
+}
+
+.player-tank:nth-child(3) {
+  animation-delay: 0.6s;
+}
+
+@keyframes fall {
+  to {
+    opacity: 1; /* Fade in */
+    transform: translateY(0); /* Move to final position */
+  }
+}
+
 
 /* .playerHand-held > .card {
   height: 100px;
