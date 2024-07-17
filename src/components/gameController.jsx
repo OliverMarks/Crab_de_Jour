@@ -115,7 +115,7 @@ export default function GameController ({locked, setLocked, players, setPlayers,
             setTimeout(() => {
                 console.log(caughtCrabs)
                 const updatedCrabs = Number(players.crabs) + Number(crabs);
-                const updatedCoins = players.coins + trash;
+                const updatedCoins = Number(players.coins) + Number(trash);
                 const catchingSummary = trash > 0 
                     ? `Round ${roundNumber} Summary: Not a bad day's work, you caught ${crabs} crabs and ${trash} trash which was recycled for Coins!` 
                     : `Round ${roundNumber} Summary: Not a bad day's work, you caught ${crabs} crabs!`;

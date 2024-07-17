@@ -272,6 +272,15 @@ padding: 3px;
 
 
 
+.right-container {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  border-left: 50px;
+}
+
+
+
 .player-tank {
   background-image: url(./assets/imgs/bg/underwater.jpg);
   background-size: cover;
@@ -318,6 +327,20 @@ padding: 3px;
     opacity: 1; /* Fade in */
     transform: translateY(0); /* Move to final position */
   }
+}
+
+
+.order-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid black;
+
+}
+
+.order-card > img {
+  height: 30px;
+  width: 30px;
 }
 
 

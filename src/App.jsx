@@ -1,5 +1,6 @@
 import { useState, useContext, createContext } from 'react';
 import Tide from './components/tide';
+import TankAndOrders from './components/tank-and-orders';
 import Rockpool from './components/rockpool';
 import Shop from './components/shop';
 import PlayerHand from './components/player-hand';
@@ -30,8 +31,9 @@ function App() {
     coins : 5,
     heldCards : [],
     activeCards : [],
-    crabs : [],
+    crabs : [4,4,4],
     trash : [],
+    orders: [[2,4,5,8], [3, 3, 3]],
     currentModifier : 0,
     selectedPools:[],
     catchLog : [],
@@ -149,9 +151,9 @@ function App() {
           /> 
           </div>
 
-          <div className='footer-container'>
+          <div className='right-container'>
           
-          <PlayerHand
+          <TankAndOrders
           players={players}
           setPlayers={setPlayers} 
           />
@@ -159,7 +161,10 @@ function App() {
           
           </div>
           
-          
+          <PlayerHand 
+          players={players}
+          setPlayers={setPlayers} 
+          />
 
           
 
