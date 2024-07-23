@@ -8,22 +8,34 @@ import { useEffect, useState } from 'react';
 export default function PlayerHand ({players, setPlayers, locked}) {
     
     // TODO 
-    // Remove active cards back down to held cards once clicked?
     // once the player has crabbed they should not be allowed to add cards to active otherwise they will lose them when going to nxt round
 
 
     const playCard = (card) => {
-        // move player cards from their hand to the active card area 
+       
         if (!locked) {
-        const index = players.heldCards.findIndex((activeCard) => activeCard.title === card.title);
-          const updatedHeldCards = [...players.heldCards.slice(0, index), ...players.heldCards.slice(index + 1)];
-          const updatedActiveCards = [...players.activeCards, card];
-          console.log(players)
+            if (players.activeCards.includes(card)) {
+              const index = players.activeCards.findIndex((activeCard) => activeCard.title === card.title);
+              const updatedActiveCards = [...players.activeCards.slice(0, index), ...players.activeCards.slice(index + 1)];
+              const updatedHeldCards = [...players.heldCards, card];
+          
           setPlayers({
             ...players,
             heldCards: updatedHeldCards,
             activeCards: updatedActiveCards
           });
+            }
+          else {
+          const index = players.heldCards.findIndex((activeCard) => activeCard.title === card.title);
+          const updatedHeldCards = [...players.heldCards.slice(0, index), ...players.heldCards.slice(index + 1)];
+          const updatedActiveCards = [...players.activeCards, card];
+          
+          setPlayers({
+            ...players,
+            heldCards: updatedHeldCards,
+            activeCards: updatedActiveCards
+          });
+        }
         } else {
         // stop players playing cards when they have locked in
         return alert('You have locked in already') }
@@ -50,6 +62,7 @@ export default function PlayerHand ({players, setPlayers, locked}) {
              
              <Card 
                 key={idx}
+                onClick={() => {playCard(card)}}
                 card = {card}
                 inHand = {true}
           
