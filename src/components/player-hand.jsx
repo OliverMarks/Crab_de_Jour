@@ -8,7 +8,8 @@ import { useEffect, useState } from 'react';
 export default function PlayerHand ({players, setPlayers, locked}) {
     
     // TODO 
-    // once the player has crabbed they should not be allowed to add cards to active otherwise they will lose them when going to nxt round
+    // once the player has crabbed they should not be allowed to add cards to active otherwise they will lose them when going to nxt round & should not be able to click
+    // active card in order to put them back in hand after being used
 
 
     const playCard = (card) => {
