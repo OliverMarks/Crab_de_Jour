@@ -31,27 +31,18 @@ function App() {
     coins : 5,
     heldCards : [],
     activeCards : [],
-    crabs : [4,4,4],
+    crabs : [],
     trash : [],
     orders: [[2,4,5,8], [3, 3, 3]],
     currentModifier : 0,
     selectedPools:[],
     catchLog : [],
+    roundNumber : 0, 
+    
     activePlayer : false,
     }
 
-    // {
-    //   name : 'Jade',
-    //   coins : 5,
-    //   heldCards : [],
-    //   activeCards : [],
-    //   crabs : [],
-    //   trash : [],
-    //   currentModifier : 0,
-    //   selectedPools:[],
-    //   catchLog : [],
-    //   activePlayer : false,
-    //   }, 
+   
      
    
 

@@ -1,15 +1,18 @@
 import React from 'react';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import mudCrab from '../assets/imgs/crabs/mud-crab.jpg';
 import blueCrab from '../assets/imgs/crabs/blue-crab.jpg';
 import purpleCrab from '../assets/imgs/crabs/purple-crab.jpg';
 import ghostCrab from '../assets/imgs/crabs/ghost-crab.jpg';
 import goldCrab from '../assets/imgs/crabs/gold-crab.jpg';
 import jadeCrab from '../assets/imgs/crabs/jade-crab.jpg';
+import tickImage from '../assets/imgs/icons/tick-image.png';
+import coinImage from '../assets/imgs/icons/coin-image.png';
 
 export default function OrderCard({ order, players, setPlayers }) {
 
     const [orderStatus, setOrderStatus] = useState(false)
+    const [orderValue, setOrderValue] = useState(0)
     
     const selectCrabImage = (poolDifficulty) => {
         switch (poolDifficulty) {
@@ -36,6 +39,28 @@ export default function OrderCard({ order, players, setPlayers }) {
         }
     };
 
+
+    useEffect(() => {
+      determineOrderValue(order);
+    }, [order]);
+
+    
+    
+    const determineOrderValue = (order) => {
+        let value = 0
+        for (let i = 0; i < order.length; i++) {
+          value += order[i]
+        }
+
+        
+
+        setOrderValue(value)
+    }
+
+   
+
+
+
     const fulfillOrder = (order) => {
         let playerCrabs = [...players.crabs]; 
         let orderFulfilled = true;
@@ -55,7 +80,7 @@ export default function OrderCard({ order, players, setPlayers }) {
             setPlayers({
                 ...players,
                 // sort out how much orders should score
-                coins: [players.coins + 10,],
+                coins: [players.coins + orderValue,],
                 crabs: playerCrabs,
             });
             setOrderStatus(true)
@@ -66,16 +91,24 @@ export default function OrderCard({ order, players, setPlayers }) {
 
     return (
         <div className='order-card'>
-            <h3>Order:</h3>
+            
+            <div className='order-reward'>
+            <h3>Reward:</h3>
+            <p>{orderValue}</p>
+            <img className='order-coin' src={coinImage} alt='coin'/>
+            </div>
+
+
+
+            <div className='order-crabs'>
             {order.map((crab, index) => (
                 <img src={selectCrabImage(crab)} alt={`Crab ${crab}`} key={index} />
             ))}
-            <button 
-            onClick={() => fulfillOrder(order)}
-            disabled={orderStatus ? true : false}
-            >  
-                Fulfill Order</button>
-            {orderStatus ? <p>Complete!</p> : null}
+            </div>
+            
+            {orderStatus ? <img className='order-tick' src={tickImage} alt="tick"/> : 
+            <button onClick={() => fulfillOrder(order)} > Fulfill Order</button>}
+        
         </div>
     );
 }

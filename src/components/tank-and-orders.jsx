@@ -12,6 +12,7 @@ export default function TankAndOrders ({players, setPlayers}) {
 return (
     <div className="tank-and-orders-container">
     <h3>Orders</h3>
+    {/* insert crab selected for crab de jour */}
     {players.orders.map((order, idx) => (
       <OrderCard
         key={idx}

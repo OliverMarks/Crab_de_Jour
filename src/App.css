@@ -337,15 +337,40 @@
 
 .order-card {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+  width: 50%;
+  height: 150px;
   border: 2px solid black;
 
 }
 
-.order-card > img {
+.order-reward {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.order-reward > p {
+  margin-right: 4px;
+  font-size: large;
+  font-weight: bolder;
+}
+
+.order-crabs > img {
   height: 30px;
   width: 30px;
+}
+
+.order-tick {
+  height: 35px;
+  width: 35px;
+}
+
+.order-coin {
+  height: 35px;
+  width: 35px;
 }
 
 
