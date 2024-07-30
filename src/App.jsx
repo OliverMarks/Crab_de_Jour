@@ -7,6 +7,7 @@ import PlayerHand from './components/player-hand';
 import PlayerStats from './components/playerStats';
 import CatchLog from './components/catchLog' ; 
 import GameController from './components/gameController';
+import  WelcomeModal  from "./components/welcomeModal";
 
 import './App.css';
 
@@ -22,12 +23,13 @@ function App() {
 
 
 // array dis 
+const [modal, setModal] = useState(true);
 
 
 
   const [players, setPlayers] = useState(
     {
-    name : 'Oly',
+   
     coins : 5,
     heldCards : [],
     activeCards : [],
@@ -37,16 +39,24 @@ function App() {
     currentModifier : 0,
     selectedPools:[],
     catchLog : [],
-    roundNumber : 0, 
-    
-    activePlayer : false,
+    activePowers:[], 
+    // activePlayer : false,
+
     }
-
-   
-     
-   
-
     );
+
+
+    const [gameState, setGameState] = useState(
+      {
+        day: 1, 
+        crabDeJour: 2, 
+        roundNumber: 1,
+        requiredCoins: 15,
+
+
+
+      }
+    )
 
       // game state 
       // round state
@@ -75,9 +85,33 @@ function App() {
   
   return (
     <>
+              
+
+      <WelcomeModal
+      openModal={modal}
+      closeModal={() => setModal(false)}
+    >
+      <div className="modal-content">
+      <h3>Welcome to Crab de Jour</h3>
+            <section>Ahoy there young crabber! All hands on nets we're a man short and have lots 
+                of orders to fufill. I'm gonna need you down at the <div className="tooltip">RockPools <span className="tooltiptext">Click on a rockpool to crab in, you must select 2</span> </div> sharpish to pull them in.
+                Things are pretty tight cashflow wise at the moment so We'll need to make 15 <div className="tooltip">Coins <span className="tooltiptext">Coins are earned by completing orders or catching the Crab de Jour. You will earn 1 Coin if you fail a catch and recycle the trash caught</span> </div> to make 
+                it to tomorrow. </section>
+                <section>
+                Remember to stock up on bait at the shop to make things easier and keep an eye out 
+                for your chance to catch the Crab de Jour! Oh and try to be careful what you catch...
+                anything we can't use for orders or that isnt the crab de jour will cost us at the end 
+                of the day.
+                </section>
+                <section>
+                Godspeed and happy crabbing me'lad 
+                </section>
+
+                   </div>
+    </WelcomeModal>
     
 
-      {/* <h1>Crab de Jour!</h1> */}
+      <h1>Crab de Jour!</h1>
       <div className='header-container'>
       <PlayerStats 
           players={players} />
@@ -96,6 +130,7 @@ function App() {
       </button>
 
       <GameController 
+    gameState = {gameState}
     locked = {locked}
     setLocked={setLocked}
     players={players}

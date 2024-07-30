@@ -4,6 +4,68 @@
 
 }
 
+.welcome-modal {
+ 
+  height: 50%;
+  width: 50%;
+  padding: 20px;
+  background-color: white;
+  border: 2px solid #000;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.modal-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+
+::backdrop {
+  background-image: linear-gradient(
+    45deg,
+    rgb(0, 204, 255),
+    rgb(61, 51, 153),
+    dodgerblue,
+    rgb(34, 0, 128)
+  );
+  opacity: 0.95;
+}
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 220px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  height: auto;
+  
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+  bottom: 100%;
+  left: 50%;
+  margin-left: -110px;
+}
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
+
+button:hover {
+cursor: pointer;
+}
+
 
 .header-container {
   display: flex;
