@@ -13,10 +13,10 @@ export default function TankAndOrders ({players, setPlayers, gameState}) {
 return (
     <div className="tank-and-orders-container">
 
-      <h3>Crab de Jour:</h3>
+      {/* <h3>Crab de Jour:</h3>
         <CrabDeJourCard 
         gameState ={gameState}
-        />
+        /> */}
 
     
     <h3>Orders</h3>
