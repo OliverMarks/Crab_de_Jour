@@ -13,13 +13,14 @@ export default function TankAndOrders ({players, setPlayers, gameState}) {
 return (
     <div className="tank-and-orders-container">
 
-      {/* <h3>Crab de Jour:</h3>
-        <CrabDeJourCard 
-        gameState ={gameState}
-        /> */}
+      <CrabDeJourCard
+      gameState={gameState}
+      
+      />
 
     
-    <h3>Orders</h3>
+    {/* <h3>Orders</h3> */}
+    <div className="orders-container">
     {/* insert crab selected for crab de jour */}
     {players.orders.map((order, idx) => (
       <OrderCard
@@ -29,9 +30,9 @@ return (
         setPlayers={setPlayers}
       />
       ))}
+</div>
 
 
-<h3>Crab Tank</h3>
     <PlayerTank 
     players = {players}
     />

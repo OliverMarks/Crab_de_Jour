@@ -51,7 +51,7 @@ export default function Rockpool ({players, setPlayers, activePools} ) {
 
     return (
         <div className="rockpool-container">
-        <h2>The Rockpools - Select Two Pools to Crab!</h2>
+        {/* <h2>The Rockpools - Select Two Pools to Crab!</h2> */}
         <div className="rockpool-grid">
             
             {activePools.map((pool =>

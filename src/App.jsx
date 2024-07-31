@@ -111,10 +111,11 @@ const [modal, setModal] = useState(true);
     </WelcomeModal>
     
 
-      <h1>Crab de Jour!</h1>
+    <PlayerStats 
+          players={players}
+          gameState={gameState} />
       <div className='header-container'>
-      <PlayerStats 
-          players={players} />
+      
 
       <div className='header-btn-container'>    
       
@@ -182,6 +183,7 @@ const [modal, setModal] = useState(true);
           <TankAndOrders
           players={players}
           setPlayers={setPlayers} 
+          gameState={gameState}
           />
           </div>
           

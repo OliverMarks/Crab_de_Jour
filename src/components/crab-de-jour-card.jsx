@@ -5,6 +5,7 @@ import purpleCrab from '../assets/imgs/crabs/purple-crab.jpg';
 import ghostCrab from '../assets/imgs/crabs/ghost-crab.jpg';
 import goldCrab from '../assets/imgs/crabs/gold-crab.jpg';
 import jadeCrab from '../assets/imgs/crabs/jade-crab.jpg';
+import coinImage from '../assets/imgs/icons/coin-image.png';
 
 export default function CrabDeJourCard({ gameState }) {
   
@@ -35,13 +36,13 @@ export default function CrabDeJourCard({ gameState }) {
 
 
   return (
-    <div>
+    <div className='crab-de-jour-container'>
 
     <h3>Crab de Jour: </h3>
-    <img></img>
+    <img src={selectCrabImage(gameState.crabDeJour)}></img>
 
 
-    Value: {gameState.crabDeJour} <img></img>
+    {gameState.crabDeJour*2} <img src={coinImage}/>
 
 
 

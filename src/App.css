@@ -1,7 +1,19 @@
 * {
+  /* margin: 0; */
   font-family: Courier New;
- 
+  background-color: 
+    
+    rgb(51, 112, 153)
+    
+  ;
+ color: white
 
+}
+
+button {
+  background-color:  rgb(31, 73, 100);
+  border: 2px solid white;
+  border-radius: 10px;
 }
 
 .welcome-modal {
@@ -76,11 +88,26 @@ cursor: pointer;
 
 .playerStats-container {
   display: flex;
+  align-items: center;
+  justify-content: center;
   gap: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  border: 2px solid white;
+  border-radius: 20px;
+  margin: 10px;
+  background-color: rgb(31, 73, 100);
+  color: white;
+
+}
+.playerStats-container > img {
+  height: 35px;
+  width: 35px;
+  background-color: rgb(31, 73, 100);
 }
 
 .playerStats-container > h3 {
   margin-right: 10px;
+  background-color: rgb(31, 73, 100);
 }
 
 .playerStats-crab-img {
@@ -109,7 +136,8 @@ cursor: pointer;
 /* main container stlyes */
 .container {
   display: flex;
-  flex-direction: column; 
+  flex-direction: column;
+  
 }
 
 .center-content-container {
@@ -121,6 +149,7 @@ cursor: pointer;
   .catch-log-container {
     width: 20vw;
     max-height: 40vh;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
     
   }
 
@@ -142,6 +171,7 @@ cursor: pointer;
     min-height: fill-available;
       overflow-x: hidden;
       overflow-y: hidden;
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .card {
@@ -158,6 +188,9 @@ cursor: pointer;
   grid-row: span 1; 
   min-width: 0; 
   min-height: 0;
+  background-color: whitesmoke;
+  color: black;
+
   
 
 }
@@ -194,12 +227,16 @@ cursor: pointer;
 .card-title {
   margin: 0;
   font-size: small;
+  background-color: whitesmoke;
+  color: black;
 }
 
 .card-description {
   text-align: center;
   margin: 0;
-  font-size: smaller
+  font-size: smaller;
+  background-color: whitesmoke;
+  color: black;
 }
 
 .card-image {
@@ -220,6 +257,7 @@ cursor: pointer;
   background-color: gold;
   border-radius: 50%;
   border: solid 1px black;
+  color: black;
 }
 
 
@@ -235,6 +273,9 @@ cursor: pointer;
     grid-template-rows: repeat(2, 1fr);
     grid-column-gap: 5px;
     grid-row-gap: 5px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  
+    
 }
 
 
@@ -247,18 +288,29 @@ cursor: pointer;
   height: 200px; 
   width: 200px; 
   border-radius: 50%;
-  border: solid 2px black;
+  border: dashed 10px rgb(245, 240, 240);
+  background-image: linear-gradient(
+    45deg,
+    rgb(0, 140, 255),
+    rgb(61, 51, 153),
+    dodgerblue,
+    rgb(34, 0, 128)
+  );
+  opacity: 0.65;
+
+  
 }
 
 .pool-container:hover {
-  cursor: pointer;
+  cursor: crosshair;
 }
 
 .active-pool {
-  background-color: aqua;
+  border: dashed 10px rgb(250, 246, 3);
 }
 
 .catch-image {
+  background-color: transparent;
   height: 100px;
   width: 100px;
 }
@@ -334,6 +386,8 @@ cursor: pointer;
   gap: 2rem;
   width: 150px;
   margin-left: 12rem;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  
  
 }
 
@@ -344,6 +398,13 @@ cursor: pointer;
   flex-direction: column;
   gap: 50px;
   border-left: 50px;
+  margin-left: 25px
+}
+
+.tank-and-orders-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
 }
 
 
@@ -362,11 +423,13 @@ cursor: pointer;
   justify-content: start;
   align-items: end;
   flex-wrap:wrap-reverse;
-  gap: 0; /* Ensure there's no gap between flex items */
+  gap: 5px; /* Ensure there's no gap between flex items */
   padding: 0; /* Remove any padding from the container */
+
 }
 
 .tank-crab {
+  background-color: transparent;
   margin: 0;
   padding: 0;
   height: 50px;
@@ -396,6 +459,43 @@ cursor: pointer;
   }
 }
 
+.crab-de-jour-container {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  border: 5px solid gold;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  
+  border-radius: 20px;
+  margin-top: 25px;
+  background-color: rgb(31, 73, 100);
+
+
+}
+
+.crab-de-jour-container > img {
+  height: 35px;
+  width: 35px;
+  background-color: rgb(31, 73, 100);
+}
+
+.crab-de-jour-container > h3 {
+  
+  background-color: rgb(31, 73, 100);
+}
+
+
+.orders-container {
+  display: flex;
+  gap: 5px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+  
+  
+  
+}
+
 
 .order-card {
   display: flex;
@@ -404,7 +504,12 @@ cursor: pointer;
   align-items: center;
   width: 50%;
   height: 150px;
-  border: 2px solid black;
+  border: 2px solid white;
+  background-color: rgb(188, 219, 247);
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+
+  
 
 }
 
@@ -412,27 +517,42 @@ cursor: pointer;
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: rgb(188, 219, 247);
+}
+
+.order-reward > h3 {
+  margin-right: 4px;
+  font-size: large;
+  font-weight: bolder;
+  background-color: rgb(188, 219, 247);
+  color: black;
 }
 
 .order-reward > p {
   margin-right: 4px;
   font-size: large;
   font-weight: bolder;
+  background-color: rgb(188, 219, 247);
+  color: black;
 }
 
 .order-crabs > img {
   height: 30px;
   width: 30px;
+  background-color: rgb(188, 219, 247);
+  
 }
 
 .order-tick {
   height: 35px;
   width: 35px;
+  background-color: rgb(188, 219, 247);
 }
 
 .order-coin {
   height: 35px;
   width: 35px;
+  background-color: rgb(188, 219, 247);
 }
 
 
