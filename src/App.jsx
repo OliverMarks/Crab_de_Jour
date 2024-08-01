@@ -8,6 +8,7 @@ import PlayerStats from './components/playerStats';
 import CatchLog from './components/catchLog' ; 
 import GameController from './components/gameController';
 import  WelcomeModal  from "./components/welcomeModal";
+import RoundCounter from './components/round-counter';
 
 import './App.css';
 
@@ -130,8 +131,12 @@ const [modal, setModal] = useState(true);
       See Shop 
       </button>
 
+      <RoundCounter 
+      gameState={gameState} />
+
       <GameController 
     gameState = {gameState}
+    setGameState={setGameState}
     locked = {locked}
     setLocked={setLocked}
     players={players}

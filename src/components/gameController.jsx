@@ -2,7 +2,7 @@
 import { useState } from 'react';
 
 
-export default function GameController ({locked, setLocked, players, setPlayers, hasCaught, setHasCaught, roundNumber, setRoundNumber, activePools, setActivePools}) {
+export default function GameController ({locked, setLocked, players, setPlayers, hasCaught, setHasCaught, roundNumber, setRoundNumber, activePools, setActivePools, gameState, setGameState}) {
 
 
     const lockInHand = () => {
@@ -159,6 +159,13 @@ export default function GameController ({locked, setLocked, players, setPlayers,
             })
             )
         )
+
+        setGameState(prevState => ({
+            ...prevState,
+            roundNumber: prevState.roundNumber + 1
+          }));
+          
+        
             
 
     }
