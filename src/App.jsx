@@ -117,6 +117,9 @@ const [modal, setModal] = useState(true);
           gameState={gameState} />
       <div className='header-container'>
       
+      <RoundCounter 
+      gameState={gameState} />
+      
 
       <div className='header-btn-container'>    
       
@@ -131,8 +134,7 @@ const [modal, setModal] = useState(true);
       See Shop 
       </button>
 
-      <RoundCounter 
-      gameState={gameState} />
+      
 
       <GameController 
     gameState = {gameState}
