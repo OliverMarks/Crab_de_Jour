@@ -42,7 +42,10 @@ export default function OrderCard({ order, players, setPlayers }) {
 
     useEffect(() => {
       determineOrderValue(order);
+      setOrderStatus(false)
     }, [order]);
+
+
 
     
     
@@ -91,7 +94,7 @@ export default function OrderCard({ order, players, setPlayers }) {
 
     return (
         <div className='order-card'>
-            <h3>order: 1233</h3>
+          <h3>order:1233</h3>
             
             <div className='order-reward'>
             <h3>Reward:</h3>

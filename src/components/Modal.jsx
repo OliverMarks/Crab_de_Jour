@@ -23,9 +23,7 @@ export default function WelcomeModal({ openModal, closeModal, children }) {
       {children}
       
       
-      <button onClick={closeModal}>
-        Start Day 1
-      </button>
+      
     
     </dialog>
   );

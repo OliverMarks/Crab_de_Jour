@@ -39,10 +39,10 @@ export default function CrabDeJourCard({ gameState }) {
     <div className='crab-de-jour-container'>
 
     <h3>Crab de Jour: </h3>
-    <img src={selectCrabImage(gameState.crabDeJour)}></img>
+    <img src={selectCrabImage(gameState.crabDeJour[0])}></img>
 
 
-    {gameState.crabDeJour*2} <img src={coinImage}/>
+    {gameState.crabDeJour* gameState.cdjBonus} <img src={coinImage}/>
 
 
 

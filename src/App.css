@@ -357,7 +357,7 @@ cursor: pointer;
 }
 
 .pool-container:hover {
-  cursor: crosshair;
+  cursor: pointer;
 }
 
 .active-pool {
@@ -621,6 +621,26 @@ cursor: pointer;
 }
 
 
+.summary-coin {
+  height: 35px;
+  width: 35px;
+}
+
+
+.summary-modal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center ;
+  height: 100%;
+  width: 100%;
+}
+
+.summary-modal > p {
+  display: flex;
+  align-items: center;
+  justify-content: center ;
+}
 /* .playerHand-held > .card {
   height: 100px;
   width: 50px;

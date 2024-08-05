@@ -26,6 +26,7 @@ return (
       <OrderCard
         key={idx}
         order={order}
+        
         players={players}
         setPlayers={setPlayers}
       />

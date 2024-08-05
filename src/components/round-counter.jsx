@@ -5,6 +5,7 @@ export default function RoundCounter({ gameState }) {
 
   return (
     <div className="round-counter-container">
+        <h3>Round:</h3>
       {Array.from({ length: totalRounds }, (_, index) => {
         const round = index + 1;
         const isActive = gameState.roundNumber === round;

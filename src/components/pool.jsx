@@ -43,7 +43,7 @@ export default function Pool({ onClick, pool, className }) {
 
   return (
     <div className={className} onClick={handleClick}>
-      {pool.rollSuccess === undefined ? pool.poolDifficulty  : null}
+      {pool.rollSuccess === undefined ? pool.poolDifficulty : null}
       {pool.rollSuccess !== undefined && (
         <img
           className='catch-image'
