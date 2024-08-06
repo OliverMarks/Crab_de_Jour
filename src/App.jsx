@@ -131,10 +131,6 @@ function App() {
       <GameController 
     gameState = {gameState}
     setGameState={setGameState}
-    welcomeModal={welcomeModal}
-    setWelcomeModal={setWelcomeModal}
-    endOfDayModal={endOfDayModal}
-    setEndOfDayModal={setEndOfDayModal}
     locked = {locked}
     setLocked={setLocked}
     players={players}
