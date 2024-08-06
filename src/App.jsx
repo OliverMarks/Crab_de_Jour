@@ -25,8 +25,9 @@ function App() {
 
 
 // array dis 
-const [welcomeModal, setWelcomeModal] = useState(true);
-const [endOfDayModal, setEndOfDayModal] = useState(false);
+
+
+
 
 
 // use effect to trigger modal state change upon change to gameState.day

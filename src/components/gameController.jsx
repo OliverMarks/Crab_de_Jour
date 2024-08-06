@@ -4,8 +4,11 @@ import EndOfRoundSummary from './end-of-round-summary';
 
 export default function GameController({
   locked, setLocked, players, setPlayers, hasCaught, setHasCaught, 
-  gameState, setGameState, activePools, setActivePools, endOfDayModal, setEndOfDayModal, welcomeModal, setWelcomeModal
+  gameState, setGameState, activePools, setActivePools, 
 }) {
+
+    const [welcomeModal, setWelcomeModal] = useState(true);
+const [endOfDayModal, setEndOfDayModal] = useState(false);
 
   const lockInHand = () => {
     players.activeCards.map(card => card.effect(setPlayers));

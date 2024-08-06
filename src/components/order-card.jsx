@@ -9,7 +9,7 @@ import jadeCrab from '../assets/imgs/crabs/jade-crab.jpg';
 import tickImage from '../assets/imgs/icons/tick-image.png';
 import coinImage from '../assets/imgs/icons/coin-image.png';
 
-export default function OrderCard({ order, players, setPlayers }) {
+export default function OrderCard({ order, players, setPlayers, }) {
 
     const [orderStatus, setOrderStatus] = useState(false)
     const [orderValue, setOrderValue] = useState(0)
@@ -94,7 +94,7 @@ export default function OrderCard({ order, players, setPlayers }) {
 
     return (
         <div className='order-card'>
-          <h3>order:1233</h3>
+          
             
             <div className='order-reward'>
             <h3>Reward:</h3>

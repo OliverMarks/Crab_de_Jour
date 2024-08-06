@@ -142,15 +142,23 @@ cursor: pointer;
 .round-counter-container {
   display: flex;
   gap: 10px;
+  align-items: center;
+ justify-content: center;
 }
 
 .round-counter-container .round {
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ 
+ font-weight: 700;
   padding: 10px;
   border: 3px solid white;
   border-radius: 5px;
   background-color: #f0f0f0;
   cursor: pointer;
   color: black;
+  height: 10px;
 }
 
 .round-counter-container .round.active {
