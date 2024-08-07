@@ -649,6 +649,39 @@ cursor: pointer;
   align-items: center;
   justify-content: center ;
 }
+
+
+
+
+.modal-progressed-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center ;
+
+}
+
+
+.power-selection-container {
+  display: flex;
+  gap: 15px
+}
+
+.power-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center ;
+  cursor: pointer;
+}
+
+.power-container > img {
+  height: 30px; 
+  width: 30px
+}
+
+
+
 /* .playerHand-held > .card {
   height: 100px;
   width: 50px;

@@ -1,10 +1,11 @@
 import { useEffect, useState } from 'react';
 import Modal from './Modal';
 import EndOfRoundSummary from './end-of-round-summary';
+import { allCards } from './card-types.js'
 
 export default function GameController({
   locked, setLocked, players, setPlayers, hasCaught, setHasCaught, 
-  gameState, setGameState, activePools, setActivePools, 
+  gameState, setGameState, activePools, setActivePools, shop, setShop, powerAttributes, setPowerAttributes
 }) {
 
     const [welcomeModal, setWelcomeModal] = useState(true);
@@ -68,7 +69,8 @@ const [endOfDayModal, setEndOfDayModal] = useState(false);
         updateRollSuccess(players.selectedPools[0], true);
       } else {
         const fail1 = `Catch roll 1: Required ${players.selectedPools[0]}, Roll: ${roll1}, Modifiers: ${players.currentModifier} Result: Hard luck, no crab`;
-        trash++;
+       trash += Number(powerAttributes.trashBonus);
+       console.log(trash)
         setPlayers(prevPlayers => ({
           ...prevPlayers,
           catchLog: [...prevPlayers.catchLog, fail1]
@@ -89,7 +91,7 @@ const [endOfDayModal, setEndOfDayModal] = useState(false);
         updateRollSuccess(players.selectedPools[1], true);
       } else {
         const fail2 = `Catch roll 2: Required ${players.selectedPools[1]}, Roll: ${roll2}, Modifiers: ${players.currentModifier} Result: Hard luck, no crab`;
-        trash++;
+        trash += Number(powerAttributes.trashBonus);
         setPlayers(prevPlayers => ({
           ...prevPlayers,
           catchLog: [...prevPlayers.catchLog, fail2]
@@ -177,13 +179,15 @@ const [endOfDayModal, setEndOfDayModal] = useState(false);
         {poolPosition: 6, poolDifficulty: 6, rollSuccess: undefined},
       ])
 
+      setShop(getRandomCards(allCards, 9))
+
       setLocked(false)
     
   };
 
   const newDay = () => {
     setPlayers({
-      coins: 5,
+      coins: powerAttributes.startingCoins,
       heldCards: [],
       activeCards: [],
       crabs: [],
@@ -199,7 +203,7 @@ const [endOfDayModal, setEndOfDayModal] = useState(false);
       ...prevState,
       day: prevState.day + 1,
       crabDeJour: generateUniqueRandomNumbers(1, 12, 1),
-      cdjBonus: 2,
+      
       roundNumber: 1,
       requiredCoins: generateRequiredCoins(gameState.day),
       gameLost: false
@@ -211,6 +215,8 @@ const [endOfDayModal, setEndOfDayModal] = useState(false);
         ...pool, rollSuccess: undefined
       }))
     );
+
+    setShop(getRandomCards(allCards, 9))
 
     setLocked(false)
   };
@@ -239,6 +245,17 @@ const [endOfDayModal, setEndOfDayModal] = useState(false);
   
     return [array1, array2];
   };
+    
+  const getRandomCards = (allCards, numCards) => {
+    const result = [];
+    while (result.length < numCards) {
+      const randomIndex = Math.floor(Math.random() * allCards.length);
+      result.push(allCards[randomIndex]);
+    }
+    return result;
+  };
+  
+  
 
 
 
@@ -277,6 +294,8 @@ const [endOfDayModal, setEndOfDayModal] = useState(false);
               newDay={newDay} 
               newGame={newGame} 
               closeModal={() => setEndOfDayModal(false)} 
+              setPowerAttributes={setPowerAttributes}
+              powerAttributes={powerAttributes}
             />
           </div>
         </Modal>

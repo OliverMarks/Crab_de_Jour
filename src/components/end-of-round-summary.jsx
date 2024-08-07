@@ -8,7 +8,9 @@ import jadeCrab from '../assets/imgs/crabs/jade-crab.jpg';
 import tickImage from '../assets/imgs/icons/tick-image.png';
 import coinImage from '../assets/imgs/icons/coin-image.png';
 
-export default function EndOfRoundSummary({ players, gameState, closeModal, newDay, newGame }) {
+import { allPowers } from './powers';
+
+export default function EndOfRoundSummary({ players, gameState, closeModal, newDay, newGame, setPowerAttributes, powerAttributes }) {
   const [modalProgressed, setModalProgressed] = useState(false);
   
 
@@ -40,7 +42,7 @@ export default function EndOfRoundSummary({ players, gameState, closeModal, newD
   const penalisedCrabs = players.crabs.filter((crab) => selectCrabImage(crab) !== selectCrabImage(gameState.crabDeJour[0]) )
   const overCrabbingPenalty = penalisedCrabs.reduce((a, b) => a + b, 0)
   const crabDeJoursImages = players.crabs.filter((crab) => selectCrabImage(crab) === selectCrabImage(gameState.crabDeJour[0]) )
-  const crabDeJoursTotal =  (crabDeJoursImages.reduce((a, b) => (a + b), 0)) * gameState.cdjBonus
+  const crabDeJoursTotal =  (crabDeJoursImages.reduce((a, b) => (a + b), 0)) * powerAttributes.cdjBonus
   const totalCoins =  (players.coins + crabDeJoursTotal) - overCrabbingPenalty
 
 
@@ -60,13 +62,32 @@ export default function EndOfRoundSummary({ players, gameState, closeModal, newD
   return (
     <div>
       {modalProgressed ? (
-        <div className="power-selection-container">
+        <div className='modal-progressed-container'>
+          
           <h3>Day {gameState.day +1}</h3>
           <h4>Select a Power</h4>
-          <p>Ancient Ring: +1 to all catch rolls</p>
-          <p>Brexit: Ignore all overcrabbing penalties</p>
-          <p>Do Over: Refresh all orders</p>
+          <div className="power-selection-container">
+          {allPowers.map((power, idx) =>
+             
+             <div 
+             className='power-container'
+             onClick={() => power.effect(setPowerAttributes)}
+             key={idx}>
+                <h3>{power.title}</h3>
+                <img src={power.img}></img>
+                <p>{power.description}</p>
+                
+                
+              </div>
+                
+                )}
+                </div>
+
+
           <button onClick={() => closeAndSetNewDay()}>Start Day {gameState.day +1}</button>
+
+        
+        
         </div>
       ) : (
         <div className="summary-modal">

@@ -7,7 +7,7 @@ import goldCrab from '../assets/imgs/crabs/gold-crab.jpg';
 import jadeCrab from '../assets/imgs/crabs/jade-crab.jpg';
 import coinImage from '../assets/imgs/icons/coin-image.png';
 
-export default function CrabDeJourCard({ gameState }) {
+export default function CrabDeJourCard({ gameState, powerAttributes }) {
   
     const selectCrabImage = (poolDifficulty) => {
     switch (poolDifficulty) {
@@ -42,7 +42,7 @@ export default function CrabDeJourCard({ gameState }) {
     <img src={selectCrabImage(gameState.crabDeJour[0])}></img>
 
 
-    {gameState.crabDeJour* gameState.cdjBonus} <img src={coinImage}/>
+    {gameState.crabDeJour* powerAttributes.cdjBonus} <img src={coinImage}/>
 
 
 

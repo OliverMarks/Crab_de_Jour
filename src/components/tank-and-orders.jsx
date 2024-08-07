@@ -6,7 +6,7 @@ import CrabDeJourCard from './crab-de-jour-card'
 
 
 
-export default function TankAndOrders ({players, setPlayers, gameState}) {
+export default function TankAndOrders ({players, setPlayers, gameState, powerAttributes}) {
 
 
   const generateRandomFourDigitNumber = () => {
@@ -21,6 +21,7 @@ return (
 
       <CrabDeJourCard
       gameState={gameState}
+      powerAttributes={powerAttributes}
       
       />
 

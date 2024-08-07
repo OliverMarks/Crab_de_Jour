@@ -7,7 +7,7 @@ import PlayerHand from './components/player-hand';
 import PlayerStats from './components/playerStats';
 import CatchLog from './components/catchLog' ; 
 import GameController from './components/gameController';
-
+import { allCards } from './components/card-types.js'
 import RoundCounter from './components/round-counter';
 
 
@@ -52,7 +52,25 @@ function App() {
   const [locked, setLocked] = useState(false)
   const [hasCaught, setHasCaught] = useState(false)
 
+  
+  
+  
+  
 
+  const getRandomCards = (allCards, numCards) => {
+    const result = [];
+    while (result.length < numCards) {
+      const randomIndex = Math.floor(Math.random() * allCards.length);
+      result.push(allCards[randomIndex]);
+    }
+    return result;
+  };
+  
+  const randomCards = getRandomCards(allCards, 9);
+  
+  const [shop, setShop] = useState(randomCards)
+  
+ 
 
 
   const [players, setPlayers] = useState(
@@ -67,7 +85,7 @@ function App() {
     currentModifier : 0,
     selectedPools:[],
     catchLog : [],
-    activePowers:[], 
+    
     // activePlayer : false,
 
     }
@@ -78,8 +96,7 @@ function App() {
       {
         day: 1, 
         crabDeJour: [2], 
-        cdjBonus: 2,
-        roundNumber: 1,
+        roundNumber: 6,
         requiredCoins: 15,
         gameLost: false 
 
@@ -88,6 +105,19 @@ function App() {
       }
     )
 
+    // attributes that can be affected by powers
+
+    const [powerAttributes, setPowerAttributes] = useState(
+      {
+        startingCoins: 5, 
+        cdjBonus: 2,
+        trashBonus: 1, 
+
+      }
+    )
+
+
+    
    
     
    
@@ -139,6 +169,10 @@ function App() {
     setHasCaught={setHasCaught}
     activePools= {activePools}
     setActivePools={setActivePools}
+    shop={shop}
+    setShop={setShop}
+    powerAttributes = {powerAttributes}
+    setPowerAttributes = {setPowerAttributes}
     
    
     
@@ -172,6 +206,8 @@ function App() {
 
           <div className="shop-pools-container" style={{display: displayToggle === 'shop' ? 'block' : 'none' }}>
           <Shop
+          shop={shop}
+          setShop={setShop}
           players={players}
           setPlayers={setPlayers} 
           /> 
@@ -183,6 +219,7 @@ function App() {
           players={players}
           setPlayers={setPlayers} 
           gameState={gameState}
+          powerAttributes={powerAttributes}
           />
           </div>
           

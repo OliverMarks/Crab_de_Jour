@@ -1,7 +1,7 @@
 import {useState, useEffect} from 'react'
 import Card from './card'
 // import { actionCards, baitCards, companionCards } from './card-types'
-import { allCards } from './card-types'
+
 
 import PlayerHand from './player-hand';
 
@@ -9,13 +9,13 @@ import PlayerHand from './player-hand';
 
 
 
-export default function Shop ( {players, setPlayers}) {
+export default function Shop ( {players, setPlayers, shop, setShop}) {
 
     // let actionCardsInShop = actionCards
     // let baitCardsInShop = baitCards
     // let companionCardsInShop = companionCards
 
-    const [shop, setShop] = useState(allCards)
+   
 
  
     const buyCard = (card) => {
