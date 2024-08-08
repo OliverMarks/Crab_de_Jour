@@ -1,4 +1,5 @@
 import React from 'react';
+import { useState } from 'react';
 import trashImage from '../assets/imgs/crabs/sea-trash.png';
 // import crabImage from '../assets/imgs/crabs/pixel-crab.png';
 import mudCrab from '../assets/imgs/crabs/mud-crab.jpg';
@@ -41,16 +42,33 @@ export default function Pool({ onClick, pool, className }) {
     return trashImage;
   };
 
+  const [isHovered, setIsHovered] = useState(false);
+ 
+  const handleMouseEnter = () => {
+    setIsHovered(true);
+  };
+  const handleMouseLeave = () => {
+    setIsHovered(false);
+  };
+  
+
   return (
-    <div className={className} onClick={handleClick}>
-      {pool.rollSuccess === undefined ? pool.poolDifficulty : null}
-      {pool.rollSuccess !== undefined && (
+    <div className={className} onClick={handleClick} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}
+    >
+
+      {isHovered ? <img
+          className='catch-image'
+          src={selectCrabImage(true, pool.poolDifficulty)}
+          alt="Crab or trash"
+        /> : null }
+      {!isHovered ? pool.poolDifficulty : null}
+      {pool.rollSuccess !== undefined && !isHovered ? (
         <img
           className='catch-image'
           src={selectCrabImage(pool.rollSuccess, pool.poolDifficulty)}
           alt="Crab or trash"
         />
-      )}
+      ) : null}
     </div>
   );
 }
