@@ -61,7 +61,7 @@ export default function Pool({ onClick, pool, className }) {
           src={selectCrabImage(true, pool.poolDifficulty)}
           alt="Crab or trash"
         /> : null }
-      {!isHovered ? pool.poolDifficulty : null}
+      {!isHovered || pool.rollSuccess !== undefined ? pool.poolDifficulty : null}
       {pool.rollSuccess !== undefined && !isHovered ? (
         <img
           className='catch-image'

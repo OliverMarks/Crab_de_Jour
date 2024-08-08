@@ -217,7 +217,7 @@ const [endOfDayModal, setEndOfDayModal] = useState(false);
     );
 
     setShop(getRandomCards(allCards, 9))
-
+    setHasCaught(false);
     setLocked(false)
   };
 

@@ -38,6 +38,36 @@ const allPowers = [
 
     {
         rarity: 1,
+        title: 'Cash Money Yo',
+        img: stackCoinsImage,
+        description: 'Start the round with 4 extra coins',
+        effect: function (setPowerAttributes) {
+            setPowerAttributes(prevPowers => ({
+              ...prevPowers,
+              startingCoins: prevPowers.startingCoins + 4
+          }));
+      },
+        
+
+    },
+
+    {
+        rarity: 1,
+        title: 'Feel the Power',
+        img: stackCoinsImage,
+        description: 'Have an additional power to choose from at the end of the day',
+        effect: function (setPowerAttributes) {
+            setPowerAttributes(prevPowers => ({
+              ...prevPowers,
+              numOfPowers: prevPowers.numOfPowers + 1
+          }));
+      },
+        
+
+    },
+
+    {
+        rarity: 1,
         title: 'Crab de Week',
         img: stackCoinsImage,
         description: 'Increase the Crab de Jour bonus multiplier by 1',

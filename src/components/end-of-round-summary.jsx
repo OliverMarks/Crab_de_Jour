@@ -43,14 +43,18 @@ export default function EndOfRoundSummary({ players, gameState, closeModal, newD
   const overCrabbingPenalty = penalisedCrabs.reduce((a, b) => a + b, 0)
   const crabDeJoursImages = players.crabs.filter((crab) => selectCrabImage(crab) === selectCrabImage(gameState.crabDeJour[0]) )
   const crabDeJoursTotal =  (crabDeJoursImages.reduce((a, b) => (a + b), 0)) * powerAttributes.cdjBonus
-  const totalCoins =  (players.coins + crabDeJoursTotal) - overCrabbingPenalty
+  const totalCoins =  (Number(players.coins) + Number(crabDeJoursTotal)) - Number(overCrabbingPenalty)
 
 
-  const closeAndSetNewDay = () => {
+  const closeAndSetNewDay = (power) => {
     console.log('new day')
-    closeModal()
+   
+   
+    power.effect(setPowerAttributes)
+  
     newDay()
-
+    console.log(powerAttributes)
+    closeModal()
   }
 
   const closeAndSetNewGame = () => {
@@ -59,19 +63,31 @@ export default function EndOfRoundSummary({ players, gameState, closeModal, newD
     newGame()
   }
 
+  const getRandomPowers = (allPowers, numCards) => {
+    const result = [];
+    while (result.length < numCards) {
+      const randomIndex = Math.floor(Math.random() * allPowers.length);
+      result.push(allPowers[randomIndex]);
+    }
+    return result;
+  };
+  
+
   return (
     <div>
       {modalProgressed ? (
         <div className='modal-progressed-container'>
           
           <h3>Day {gameState.day +1}</h3>
-          <h4>Select a Power</h4>
+          <p>Sterling work m'lad! I've found some things out the back which might help us reach our target. Take your pick!</p>
+          <h4>Select a power to start the day</h4>
           <div className="power-selection-container">
-          {allPowers.map((power, idx) =>
+          {getRandomPowers(allPowers, powerAttributes.numOfPowers).map((power, idx) =>
              
              <div 
              className='power-container'
-             onClick={() => power.effect(setPowerAttributes)}
+             onClick={() => closeAndSetNewDay(power)}
+            
              key={idx}>
                 <h3>{power.title}</h3>
                 <img src={power.img}></img>
@@ -84,7 +100,7 @@ export default function EndOfRoundSummary({ players, gameState, closeModal, newD
                 </div>
 
 
-          <button onClick={() => closeAndSetNewDay()}>Start Day {gameState.day +1}</button>
+          {/* <button onClick={() => closeAndSetNewDay()}>Start Day {gameState.day +1}</button> */}
 
         
         

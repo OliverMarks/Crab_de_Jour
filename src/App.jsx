@@ -112,6 +112,7 @@ function App() {
         startingCoins: 5, 
         cdjBonus: 2,
         trashBonus: 1, 
+        numOfPowers: 3
 
       }
     )

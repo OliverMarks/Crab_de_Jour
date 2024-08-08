@@ -2,6 +2,9 @@
 import wormImage from '../assets/imgs/bait/bait-worm.png';
 import fishImage from '../assets/imgs/bait/bait-fish.png';
 import crabCrackImage from '../assets/imgs/bait/bait-crab-crack.png'; 
+import baitBoosterImage from '../assets/imgs/bait/bait-booster.png';
+import secretSauceImage from '../assets/imgs/bait/secret-sauce.png'
+import oneOfUsImage from '../assets/imgs/bait/one-of-us.png'
 
 // react version of services, dependency injection
 
@@ -10,7 +13,7 @@ const allCards = [
         type: 'Bait',
         title: 'Worm',
         img: wormImage,
-        description: '+1 to your catch roll this turn',
+        description: '+1 to your catch roll this round',
         cost: 1,
         effect: function (setPlayers) {
           setPlayers(prevPlayers => ({
@@ -25,7 +28,7 @@ const allCards = [
         type: 'Bait',
         title: 'Fish',
         img: fishImage,
-        description: '+2 to your catch roll this turn',
+        description: '+2 to your catch roll this round',
         cost: 2,
         effect: function (setPlayers) {
           setPlayers(prevPlayers => ({
@@ -40,7 +43,7 @@ const allCards = [
         type: 'Bait',
         title: 'Crab Crack',
         img: crabCrackImage,
-        description: '+3 to your catch roll this turn',
+        description: '+3 to your catch roll this round',
         cost: 3,
         effect: function (setPlayers) {
           setPlayers(prevPlayers => ({
@@ -50,7 +53,71 @@ const allCards = [
          
       },
 
-    }
+    }, 
+
+    {
+      type: 'Bait',
+      title: 'Bait Booster',
+      img: baitBoosterImage,
+      description: 'x2 to your modifiers this round',
+      cost: 5,
+      effect: function (setPlayers) {
+        setPlayers(prevPlayers => ({
+            ...prevPlayers,
+            currentModifier: prevPlayers.currentModifier * 2
+        }));
+       
+    },
+
+  }, 
+
+  {
+    type: 'Bait',
+    title: 'Secret Sauce',
+    img: secretSauceImage,
+    description: 'x3 to your modifiers this round',
+    cost: 7,
+    effect: function (setPlayers) {
+      setPlayers(prevPlayers => ({
+          ...prevPlayers,
+          currentModifier: prevPlayers.currentModifier * 3
+      }));
+     
+  },
+},
+
+{
+  type: 'Bait',
+  title: 'Secret Sauce',
+  img: secretSauceImage,
+  description: 'x3 to your modifiers this round',
+  cost: 7,
+  effect: function (setPlayers) {
+    setPlayers(prevPlayers => ({
+        ...prevPlayers,
+        currentModifier: prevPlayers.currentModifier * 3
+    }));
+   
+},
+},
+
+{
+  type: 'Bait',
+  title: 'One of Us',
+  img: oneOfUsImage,
+  description: ' add the number of crabs in your tank to your modifiers this round',
+  cost: 2,
+  effect: function (setPlayers) {
+    setPlayers(prevPlayers => ({
+        ...prevPlayers,
+        currentModifier: prevPlayers.currentModifier + prevPlayers.crabs.length
+    }));
+   
+},
+}
+
+
+
   //   { type : 'Action',
   //     title: 'Tidal Surge',
   //     img: wormImage,
