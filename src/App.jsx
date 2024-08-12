@@ -13,7 +13,16 @@ import RoundCounter from './components/round-counter';
 
 import './App.css';
 
+// import coinSound from './path/to/coin-sound.mp3'; // Import your sound file
 
+// export default function GameComponent({ players }) {
+//   useEffect(() => {
+//     // This effect will run every time players.coins changes
+//     const audio = new Audio(coinSound);
+//     if (players.coins > 0) { // Check to prevent sound playing on initial render
+//       audio.play();
+//     }
+//   }, [players.coins]);
 
 
 
