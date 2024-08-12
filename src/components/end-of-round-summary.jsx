@@ -47,6 +47,7 @@ export default function EndOfRoundSummary({ players, gameState, closeModal, newD
 
 
   const closeAndSetNewDay = (power) => {
+    setModalProgressed(false)
     console.log('new day')
     power.effect(setPowerAttributes)
     setPlayers(prevPlayers => ({
