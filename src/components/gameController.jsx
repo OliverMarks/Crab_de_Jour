@@ -186,7 +186,9 @@ const [endOfDayModal, setEndOfDayModal] = useState(false);
   };
 
   const newDay = () => {
-    setPlayers({
+
+    setPlayers(prevPlayers => ({
+      ...prevPlayers,
       coins: powerAttributes.startingCoins,
       heldCards: [],
       activeCards: [],
@@ -196,8 +198,8 @@ const [endOfDayModal, setEndOfDayModal] = useState(false);
       currentModifier: 0,
       selectedPools: [],
       catchLog: [],
-      activePowers: []
-    });
+    }));
+   
 
     setGameState(prevState => ({
       ...prevState,
@@ -296,6 +298,7 @@ const [endOfDayModal, setEndOfDayModal] = useState(false);
               closeModal={() => setEndOfDayModal(false)} 
               setPowerAttributes={setPowerAttributes}
               powerAttributes={powerAttributes}
+              setPlayers={setPlayers}
             />
           </div>
         </Modal>

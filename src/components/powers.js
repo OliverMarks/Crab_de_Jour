@@ -14,7 +14,7 @@ const allPowers = [
         effect: function (setPowerAttributes) {
             setPowerAttributes(prevPowers => ({
               ...prevPowers,
-              trashBonus: prevPowers.trashBonus + 1
+              trashBonus: prevPowers.trashBonus += 1
           }));
       },
         
@@ -29,7 +29,7 @@ const allPowers = [
         effect: function (setPowerAttributes) {
             setPowerAttributes(prevPowers => ({
               ...prevPowers,
-              startingCoins: prevPowers.startingCoins + 3
+              startingCoins: prevPowers.startingCoins += 3
           }));
       },
         
@@ -44,7 +44,7 @@ const allPowers = [
         effect: function (setPowerAttributes) {
             setPowerAttributes(prevPowers => ({
               ...prevPowers,
-              startingCoins: prevPowers.startingCoins + 4
+              startingCoins: prevPowers.startingCoins += 4
           }));
       },
         
@@ -59,7 +59,7 @@ const allPowers = [
         effect: function (setPowerAttributes) {
             setPowerAttributes(prevPowers => ({
               ...prevPowers,
-              numOfPowers: prevPowers.numOfPowers + 1
+              numOfPowers: prevPowers.numOfPowers += 1
           }));
       },
         
@@ -74,7 +74,7 @@ const allPowers = [
         effect: function (setPowerAttributes) {
             setPowerAttributes(prevPowers => ({
               ...prevPowers,
-              cdjBonus: prevPowers.cdjBonus + 1
+              cdjBonus: prevPowers.cdjBonus += 1
           }));
       },
         

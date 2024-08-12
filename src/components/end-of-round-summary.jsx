@@ -10,7 +10,7 @@ import coinImage from '../assets/imgs/icons/coin-image.png';
 
 import { allPowers } from './powers';
 
-export default function EndOfRoundSummary({ players, gameState, closeModal, newDay, newGame, setPowerAttributes, powerAttributes }) {
+export default function EndOfRoundSummary({ players, gameState, closeModal, newDay, newGame, setPowerAttributes, powerAttributes, setPlayers }) {
   const [modalProgressed, setModalProgressed] = useState(false);
   
 
@@ -48,9 +48,12 @@ export default function EndOfRoundSummary({ players, gameState, closeModal, newD
 
   const closeAndSetNewDay = (power) => {
     console.log('new day')
-   
-   
     power.effect(setPowerAttributes)
+    setPlayers(prevPlayers => ({
+      ...prevPlayers,
+      powers: [...prevPlayers.powers, power]
+    }));
+    console.log(players.powers)
   
     newDay()
     console.log(powerAttributes)
@@ -65,12 +68,31 @@ export default function EndOfRoundSummary({ players, gameState, closeModal, newD
 
   const getRandomPowers = (allPowers, numCards) => {
     const result = [];
+    const usedIndexes = new Set();
+  
     while (result.length < numCards) {
       const randomIndex = Math.floor(Math.random() * allPowers.length);
-      result.push(allPowers[randomIndex]);
+  
+      // Check if the index has already been used
+      if (!usedIndexes.has(randomIndex)) {
+        result.push(allPowers[randomIndex]);
+        usedIndexes.add(randomIndex); // Add the index to the set of used indexes
+      }
     }
+  
     return result;
   };
+  
+
+  // const generateUniqueRandomNumbers = (min, max, count) => {
+  //   const numbers = new Set();
+  //   while (numbers.size < count) {
+  //     const randomNum = Math.floor(Math.random() * (max - min + 1)) + min;
+  //     numbers.add(randomNum);
+  //   }
+  //   return Array.from(numbers);
+  // };
+  
   
 
   return (
