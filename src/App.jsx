@@ -10,19 +10,14 @@ import GameController from './components/gameController';
 import { allCards } from './components/card-types.js'
 import RoundCounter from './components/round-counter';
 
+import coinSound from './assets/sound/coin.mp3'
+import successSound from './assets/sound/success.mp3'
 
 import './App.css';
 
 // import coinSound from './path/to/coin-sound.mp3'; // Import your sound file
 
-// export default function GameComponent({ players }) {
-//   useEffect(() => {
-//     // This effect will run every time players.coins changes
-//     const audio = new Audio(coinSound);
-//     if (players.coins > 0) { // Check to prevent sound playing on initial render
-//       audio.play();
-//     }
-//   }, [players.coins]);
+
 
 
 
@@ -129,7 +124,22 @@ function App() {
 
 
     
-   
+    useEffect(() => {
+      // This effect will run every time players.coins changes
+      const audio = new Audio(coinSound);
+      if (players.coins > 5) { // Check to prevent sound playing on initial render
+        audio.play();
+      }
+    }, [players.coins]);
+
+    useEffect(() => {
+      // This effect will run every time players.coins changes
+      const audio = new Audio(successSound);
+      if (players.crabs > 0) { // Check to prevent sound playing on initial render
+        audio.play();
+      }
+    }, [players.crabs]);
+  
     
    
 
