@@ -13,34 +13,39 @@ export default function PlayerHand ({players, setPlayers, locked}) {
 
 
     const playCard = (card) => {
-       
-        if (!locked) {
-            if (players.activeCards.includes(card)) {
-              const index = players.activeCards.findIndex((activeCard) => activeCard.title === card.title);
-              const updatedActiveCards = [...players.activeCards.slice(0, index), ...players.activeCards.slice(index + 1)];
-              const updatedHeldCards = [...players.heldCards, card];
-          
-          setPlayers({
-            ...players,
-            heldCards: updatedHeldCards,
-            activeCards: updatedActiveCards
-          });
-            }
-          else {
-          const index = players.heldCards.findIndex((activeCard) => activeCard.title === card.title);
-          const updatedHeldCards = [...players.heldCards.slice(0, index), ...players.heldCards.slice(index + 1)];
-          const updatedActiveCards = [...players.activeCards, card];
-          
-          setPlayers({
-            ...players,
-            heldCards: updatedHeldCards,
-            activeCards: updatedActiveCards
-          });
-        }
-        } else {
-        // stop players playing cards when they have locked in
-        return alert('You have locked in already') }
-      };
+      if (locked) {
+          alert('You have locked in already');
+          return;
+      }
+  
+      if (players.activeCards.some((activeCard) => activeCard.id === card.id)) {
+          // Card is in active cards, move it back to held cards
+          const updatedActiveCards = players.activeCards.filter(
+              (activeCard) => activeCard.id !== card.id
+          );
+          const updatedHeldCards = [...players.heldCards, { ...card }]; // Clone the card
+  
+          setPlayers((prevPlayers) => ({
+              ...prevPlayers,
+              heldCards: updatedHeldCards,
+              activeCards: updatedActiveCards,
+          }));
+      } else {
+          // Card is in held cards, move it to active cards
+          const updatedHeldCards = players.heldCards.filter(
+              (heldCard) => heldCard.id !== card.id
+          );
+          const updatedActiveCards = [...players.activeCards, { ...card }]; // Clone the card
+  
+          setPlayers((prevPlayers) => ({
+              ...prevPlayers,
+              heldCards: updatedHeldCards,
+              activeCards: updatedActiveCards,
+          }));
+      }
+  };
+  
+  
       
      
 

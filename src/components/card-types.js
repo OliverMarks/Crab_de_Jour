@@ -11,6 +11,7 @@ import oneOfUsImage from '../assets/imgs/bait/one-of-us.png'
 const allCards = [
     {
         type: 'Bait',
+        id: 1,
         title: 'Worm',
         img: wormImage,
         description: '+1 to your catch roll this round',
@@ -26,6 +27,7 @@ const allCards = [
     },
     {
         type: 'Bait',
+        id: 2,
         title: 'Fish',
         img: fishImage,
         description: '+2 to your catch roll this round',
@@ -41,6 +43,7 @@ const allCards = [
     },
     {
         type: 'Bait',
+        id: 3,
         title: 'Crab Crack',
         img: crabCrackImage,
         description: '+3 to your catch roll this round',
@@ -57,6 +60,7 @@ const allCards = [
 
     {
       type: 'Bait',
+      id: 4,
       title: 'Bait Booster',
       img: baitBoosterImage,
       description: 'x2 to your modifiers this round',
@@ -73,6 +77,7 @@ const allCards = [
 
   {
     type: 'Bait',
+    id: 5,
     title: 'Secret Sauce',
     img: secretSauceImage,
     description: 'x3 to your modifiers this round',
@@ -88,6 +93,7 @@ const allCards = [
 
 {
   type: 'Bait',
+  id: 6,
   title: 'Secret Sauce',
   img: secretSauceImage,
   description: 'x3 to your modifiers this round',
@@ -103,6 +109,7 @@ const allCards = [
 
 {
   type: 'Bait',
+  id: 7,
   title: 'One of Us',
   img: oneOfUsImage,
   description: ' add the number of crabs in your tank to your modifiers this round',

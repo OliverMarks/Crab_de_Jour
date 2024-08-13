@@ -143,8 +143,10 @@ const [endOfDayModal, setEndOfDayModal] = useState(false);
   };
 
   const endDay = () => {
+    setTimeout(() => {
     console.log('day end');
     setEndOfDayModal(true);
+  }, 2000);
   };
 
   const newGame = () => {
@@ -318,7 +320,7 @@ const [endOfDayModal, setEndOfDayModal] = useState(false);
             Next Round!
           </button>
         ) : ( hasCaught ? 
-          <button onClick={endDay}>
+          <button onClick={endDay} >
             End Day
           </button>
        : null )}

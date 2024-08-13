@@ -63,12 +63,27 @@ function App() {
 
   const getRandomCards = (allCards, numCards) => {
     const result = [];
+    const usedIds = new Set(); // To keep track of used IDs
+
     while (result.length < numCards) {
-      const randomIndex = Math.floor(Math.random() * allCards.length);
-      result.push(allCards[randomIndex]);
+        const randomIndex = Math.floor(Math.random() * allCards.length);
+        let newId;
+
+        // Ensure the new ID is unique
+        do {
+            newId = Math.floor(Math.random() * 100000);
+        } while (usedIds.has(newId));
+
+        usedIds.add(newId); // Mark this ID as used
+
+        const selectedCard = { ...allCards[randomIndex], id: newId };
+        result.push(selectedCard);
     }
+
     return result;
-  };
+};
+
+
   
   const randomCards = getRandomCards(allCards, 9);
   
