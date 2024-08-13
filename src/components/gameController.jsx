@@ -317,11 +317,11 @@ const [endOfDayModal, setEndOfDayModal] = useState(false);
           <button onClick={nextRound} disabled={!(locked && hasCaught)}>
             Next Round!
           </button>
-        ) : (
+        ) : ( hasCaught ? 
           <button onClick={endDay}>
             End Day
           </button>
-        )}
+       : null )}
       </div>
     </>
   );
