@@ -233,7 +233,7 @@ const [endOfDayModal, setEndOfDayModal] = useState(false);
 
 
   const generateRequiredCoins = (day) => {
-        return 15 * (day + 1)
+        return 10 * (day + 1)
   }
 
   const generateNewOrders = (min, max, maxCount) => {

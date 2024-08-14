@@ -28,7 +28,11 @@ button:disabled {
   height: 50%;
   width: 50%;
   padding: 20px;
-  background-color: white;
+  background-color: 
+    
+    rgb(51, 112, 153)
+    
+  ;
   border: 2px solid #000;
   border-radius: 10px;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
@@ -40,8 +44,12 @@ button:disabled {
   align-items: center;
   justify-content: center;
   gap: 20px;
-  background-color: white;
-  color: black;
+  background-color: 
+    
+    rgb(51, 112, 153)
+    
+  ;
+  color: white;
 }
 
 .modal-content > h3 {
@@ -644,19 +652,33 @@ cursor: pointer;
 }
 
 
+
 .summary-modal {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center ;
-  height: 100%;
-  width: 100%;
+  
+
+}
+
+ /* Hide scrollbar for Chrome, Safari and Opera */
+ .summary-modal::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.summary-modal::-webkit-scrollbar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
 }
 
 .summary-modal > p {
   display: flex;
   align-items: center;
   justify-content: center ;
+  height: auto;
+  width: auto;
 }
 
 
@@ -669,15 +691,15 @@ cursor: pointer;
   align-items: center ;
   height: 100%;
   width: 100%;
-  gap: 20px;
-  padding: 10px;
+  gap: 10px;
+  padding: 20px;
 
 }
 
 
 .power-selection-container {
   display: flex;
-  gap: 10px
+  gap: 5px
 }
 
 .power-container {
@@ -685,14 +707,26 @@ cursor: pointer;
   flex-direction: column;
   justify-content: center;
   align-items: center ;
+  text-align: center;
   cursor: pointer;
   border: 2px solid white;
   border-radius: 20px;
+  width: 50px;
+  
+}
+
+.power-container > p {
+  font-size: small;
+
+}
+
+.power-container > h3 {
+  font-size: medium;
 }
 
 .power-container > img {
-  height: 30px; 
-  width: 30px
+  height: 40px; 
+  width: 40px
 }
 
 
