@@ -24,7 +24,7 @@ export default function PlayerStats({players, gameState}) {
             <div>
                 <h3>Powers</h3>
                 {players?.powers?.length > 0 && players.powers.map((power, idx) => (
-  <img key={idx} src={power.image} title={power.description} alt={power.title} />
+  <img className='playerStats-power' key={idx} src={power.img} title={power.description} alt={power.title} />
 ))}
 
 
