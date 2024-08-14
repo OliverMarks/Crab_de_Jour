@@ -14,7 +14,7 @@ const allCards = [
         id: 1,
         title: 'Worm',
         img: wormImage,
-        description: '+1 to your catch roll this round',
+        description: '+1 to your modifier this round',
         cost: 1,
         effect: function (setPlayers) {
           setPlayers(prevPlayers => ({
@@ -30,7 +30,7 @@ const allCards = [
         id: 2,
         title: 'Fish',
         img: fishImage,
-        description: '+2 to your catch roll this round',
+        description: '+2 to your modifier this round',
         cost: 2,
         effect: function (setPlayers) {
           setPlayers(prevPlayers => ({
@@ -46,7 +46,7 @@ const allCards = [
         id: 3,
         title: 'Crab Crack',
         img: crabCrackImage,
-        description: '+3 to your catch roll this round',
+        description: '+3 to your modifier this round',
         cost: 3,
         effect: function (setPlayers) {
           setPlayers(prevPlayers => ({
