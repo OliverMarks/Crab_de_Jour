@@ -288,7 +288,10 @@ const [endOfDayModal, setEndOfDayModal] = useState(false);
               to make it to tomorrow.
             </section>
             <section>
-              Remember to stock up on bait at the shop to make things easier and keep an eye out for your chance to catch the Crab de Jour! Oh and try to be careful what you catch...
+              Remember to stock up on <div className="tooltip">
+              Bait <span className="tooltiptext">Bait can be bought in the shop and will enhance your chance of success when trying to catch a crab</span> </div>{' '} at the shop to make things easier and keep an eye out for your chance to catch the <div className="tooltip">
+                Crab de Jour <span className="tooltiptext">Each day one crab will be worth x2 - this multiplier can be enhanced</span>
+              </div>{' '}! Oh and try to be careful what you catch...
               anything we can't use for orders or that isn't the crab de jour will cost us at the end of the day.
             </section>
             <section>Godspeed and happy crabbing me'lad</section>
