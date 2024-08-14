@@ -97,12 +97,12 @@ function App() {
   const [players, setPlayers] = useState(
     {
    
-    coins : 50,
+    coins : 5,
     heldCards : [],
     activeCards : [],
     crabs : [],
     trash : [],
-    orders: [[2,4,5,8], [3, 3, 3]],
+    orders: [[2,4,5,], [2, 2, 2]],
     currentModifier : 0,
     selectedPools:[],
     catchLog : [],
@@ -117,7 +117,7 @@ function App() {
     const [gameState, setGameState] = useState(
       {
         day: 1, 
-        crabDeJour: [2], 
+        crabDeJour: [4], 
         roundNumber: 1,
         requiredCoins: 15,
         gameLost: false 
