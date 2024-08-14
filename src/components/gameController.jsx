@@ -8,7 +8,7 @@ export default function GameController({
   gameState, setGameState, activePools, setActivePools, shop, setShop, powerAttributes, setPowerAttributes
 }) {
 
-    const [welcomeModal, setWelcomeModal] = useState(true);
+const [welcomeModal, setWelcomeModal] = useState(true);
 const [endOfDayModal, setEndOfDayModal] = useState(false);
 
   const lockInHand = () => {
@@ -21,6 +21,12 @@ const [endOfDayModal, setEndOfDayModal] = useState(false);
       setLocked(true);
     }
   };
+
+
+  // useEffect(() => {
+    
+  // }, [players.activeCards]);
+  
 
   const generateUniqueRandomNumbers = (min, max, count) => {
     const numbers = new Set();

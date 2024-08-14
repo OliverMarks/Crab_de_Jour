@@ -21,8 +21,8 @@ export default function PlayerStats({players, gameState}) {
             <h3>Coins:  {players.coins} </h3> <img src={coinImage}></img>
             <h3>Current Modifier: +{players.currentModifier}</h3>
             <h3>Target: {gameState.requiredCoins}</h3> <img src={coinImage}></img>
-            <div>
-                <h3>Powers</h3>
+            <div className='playerStats-power-container'>
+                <h3>Powers:</h3>
                 {players?.powers?.length > 0 && players.powers.map((power, idx) => (
   <img className='playerStats-power' key={idx} src={power.img} title={power.description} alt={power.title} />
 ))}

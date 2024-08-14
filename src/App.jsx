@@ -77,7 +77,9 @@ function App() {
         usedIds.add(newId); // Mark this ID as used
 
         const selectedCard = { ...allCards[randomIndex], id: newId };
+       
         result.push(selectedCard);
+        
     }
 
     return result;
@@ -95,7 +97,7 @@ function App() {
   const [players, setPlayers] = useState(
     {
    
-    coins : 5,
+    coins : 50,
     heldCards : [],
     activeCards : [],
     crabs : [],

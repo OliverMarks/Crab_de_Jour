@@ -131,6 +131,15 @@ cursor: pointer;
   background-color: rgb(31, 73, 100);
 }
 
+.playerStats-power-container {
+  background-color: rgb(31, 73, 100);
+}
+
+.playerStats-power-container > h3 {
+  background-color: rgb(31, 73, 100);
+}
+
+
 .playerStats-power {
   margin-right: 4px;
   height: 30px;
@@ -415,9 +424,9 @@ cursor: pointer;
 
 .playerHand-held {
   display: grid;
-  width: 500px;
+  width: 1200px;
   height: 150px;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(9, 1fr);
   grid-template-rows: repeat(1, 1fr);
   min-height: -moz-available;
   min-height: -webkit-fill-available;
@@ -430,9 +439,9 @@ cursor: pointer;
 
 .playerHand-active {
   display: grid;
-  width: 500px;
+  width: 1200px;
   height: 150px;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(9, 1fr);
   grid-template-rows: repeat(1, 1fr);
   min-height: -moz-available;
   min-height: -webkit-fill-available;
