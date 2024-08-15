@@ -79,7 +79,22 @@ const allPowers = [
       },
         
 
-    }
+    },
+
+    // {
+    //     rarity: 1,
+    //     title: 'Restock',
+    //     img: stackCoinsImage,
+    //     description: 'Completely restock the shop',
+    //     effect: function (setPowerAttributes) {
+    //         setPowerAttributes(prevPowers => ({
+    //           ...prevPowers,
+    //           cdjBonus: prevPowers.cdjBonus += 1
+    //       }));
+    //   },
+        
+
+    // }
 ]
 
 

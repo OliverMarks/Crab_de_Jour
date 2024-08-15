@@ -19,7 +19,7 @@ export default function PlayerStats({players, gameState}) {
 
             <h3>Day {gameState.day}</h3>
             <h3>Coins:  {players.coins} </h3> <img src={coinImage}></img>
-            <h3>Current Modifier: +{players.currentModifier}</h3>
+            <h3>Current Modifier: {players.currentModifier}</h3>
             <h3>Target: {gameState.requiredCoins}</h3> <img src={coinImage}></img>
             <div className='playerStats-power-container'>
                 <h3>Powers:</h3>
