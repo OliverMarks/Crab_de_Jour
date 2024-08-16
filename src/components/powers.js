@@ -3,6 +3,7 @@ import brexitImage from '../assets/imgs/powers/brexit.png';
 import stackCoinsImage from '../assets/imgs/powers/stack-coins.png';
 import crabCrackImage from '../assets/imgs/bait/bait-crab-crack.png'; 
 import diceImage from '../assets/imgs/bait/dice-bait.png'
+import randoCrabImage from  '../assets/imgs/powers/rando-crab.png';
 
 // react version of services, dependency injection
 
@@ -95,7 +96,24 @@ const allPowers = [
       },
         
 
-    }
+    },
+
+    {
+        rarity: 1,
+        title: 'Squatters Rights',
+        img: randoCrabImage,
+        description: 'Start the day with a random crab in the tank',
+        effect: function (setPowerAttributes) {
+            const crab = 1 + Math.floor(Math.random() * 12);
+            setPowerAttributes(prevPowers => ({
+              ...prevPowers,
+              crabs: prevPowers.crabs.push(crab)
+          }));
+      },
+        
+
+    },
+
 ]
 
 

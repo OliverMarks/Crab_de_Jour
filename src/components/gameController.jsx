@@ -201,7 +201,7 @@ const [endOfDayModal, setEndOfDayModal] = useState(false);
       coins: powerAttributes.startingCoins,
       heldCards: [],
       activeCards: [],
-      crabs: [],
+      crabs: powerAttributes.crabs,
       trash: [],
       orders: generateNewOrders(1, 12, 4),
       currentModifier: 0,
