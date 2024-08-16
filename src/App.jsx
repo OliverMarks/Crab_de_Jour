@@ -118,7 +118,7 @@ function App() {
     const [gameState, setGameState] = useState(
       {
         day: 1, 
-        crabDeJour: [4], 
+        crabDeJour: [3], 
         roundNumber: 1,
         requiredCoins: 15,
         gameLost: false 

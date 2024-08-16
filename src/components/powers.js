@@ -114,6 +114,8 @@ const allPowers = [
 
     },
 
+    // loyalty card? reduce cost of bait by 1 
+
 ]
 
 
