@@ -57,8 +57,8 @@ const [endOfDayModal, setEndOfDayModal] = useState(false);
       );
     };
 
-    const roll1 = 1 + Math.floor(Math.random() * 6);
-    const roll2 = 1 + Math.floor(Math.random() * 6);
+    const roll1 = 1 + Math.floor(Math.random() * players.dice);
+    const roll2 = 1 + Math.floor(Math.random() * players.dice);
     let caughtCrabs = [];
     let crabs = 0;
     let trash = 0;
@@ -110,8 +110,8 @@ const [endOfDayModal, setEndOfDayModal] = useState(false);
       const updatedCrabs = Number(players.crabs) + Number(crabs);
       const updatedCoins = Number(players.coins) + Number(trash);
       const catchingSummary = trash > 0 
-        ? `Round ${gameState.roundNumber} Summary: Not a bad day's work, you caught ${crabs} crabs and ${trash} trash which was recycled for Coins!` 
-        : `Round ${gameState.roundNumber} Summary: Not a bad day's work, you caught ${crabs} crabs!`;
+        ? `Round ${gameState.roundNumber} Summary: Not a bad round, you caught ${crabs} crabs and ${trash} trash which was recycled for Coins!` 
+        : `Round ${gameState.roundNumber} Summary: Not a bad round, you caught ${crabs} crabs!`;
     
       setPlayers(prevPlayers => ({
         ...prevPlayers,
@@ -166,7 +166,8 @@ const [endOfDayModal, setEndOfDayModal] = useState(false);
       currentModifier: 0,
       selectedPools: [],
       catchLog: [],
-      activePowers: []
+      activePowers: [],
+      dice: 6 
     });
 
     setGameState({
@@ -206,6 +207,7 @@ const [endOfDayModal, setEndOfDayModal] = useState(false);
       currentModifier: 0,
       selectedPools: [],
       catchLog: [],
+      dice: powerAttributes.dice
     }));
    
 
@@ -213,10 +215,19 @@ const [endOfDayModal, setEndOfDayModal] = useState(false);
       ...prevState,
       day: prevState.day + 1,
       crabDeJour: generateUniqueRandomNumbers(1, 12, 1),
-      
+  
       roundNumber: 1,
       requiredCoins: generateRequiredCoins(gameState.day),
       gameLost: false
+    }));
+
+    setPowerAttributes(prevState => ({
+      ...prevState,
+        startingCoins: 5, 
+        cdjBonus: 2,
+        trashBonus: 1, 
+        numOfPowers: 3,
+        dice: 6 
     }));
 
     updatePoolDifficulties();

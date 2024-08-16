@@ -107,6 +107,7 @@ function App() {
     selectedPools:[],
     catchLog : [],
     powers : [],
+    dice : 6,
     
     // activePlayer : false,
 
@@ -134,7 +135,8 @@ function App() {
         startingCoins: 5, 
         cdjBonus: 2,
         trashBonus: 1, 
-        numOfPowers: 3
+        numOfPowers: 3,
+        dice: 6 
 
       }
     )

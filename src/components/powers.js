@@ -2,6 +2,7 @@
 import brexitImage from '../assets/imgs/powers/brexit.png';
 import stackCoinsImage from '../assets/imgs/powers/stack-coins.png';
 import crabCrackImage from '../assets/imgs/bait/bait-crab-crack.png'; 
+import diceImage from '../assets/imgs/bait/dice-bait.png'
 
 // react version of services, dependency injection
 
@@ -81,20 +82,20 @@ const allPowers = [
 
     },
 
-    // {
-    //     rarity: 1,
-    //     title: 'Restock',
-    //     img: stackCoinsImage,
-    //     description: 'Completely restock the shop',
-    //     effect: function (setPowerAttributes) {
-    //         setPowerAttributes(prevPowers => ({
-    //           ...prevPowers,
-    //           cdjBonus: prevPowers.cdjBonus += 1
-    //       }));
-    //   },
+    {
+        rarity: 1,
+        title: 'Loaded Dice',
+        img: diceImage,
+        description: 'Increase your maxiumum roll by 1',
+        effect: function (setPowerAttributes) {
+            setPowerAttributes(prevPowers => ({
+              ...prevPowers,
+              dice: prevPowers.dice += 1
+          }));
+      },
         
 
-    // }
+    }
 ]
 
 
