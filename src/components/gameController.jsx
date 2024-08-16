@@ -160,7 +160,7 @@ const [endOfDayModal, setEndOfDayModal] = useState(false);
       coins: 5,
       heldCards: [],
       activeCards: [],
-      crabs: [2, 4, 5, 8],
+      crabs: [],
       trash: [],
       orders: [[2,4,5,8], [3, 3, 3]],
       currentModifier: 0,
@@ -196,6 +196,17 @@ const [endOfDayModal, setEndOfDayModal] = useState(false);
 
   const newDay = () => {
 
+    setPowerAttributes(prevState => ({
+      ...prevState,
+        startingCoins: 5, 
+        cdjBonus: 2,
+        trashBonus: 1, 
+        numOfPowers: 3,
+        dice: 6, 
+        crabs:[]
+    }));
+
+
     setPlayers(prevPlayers => ({
       ...prevPlayers,
       coins: powerAttributes.startingCoins,
@@ -221,15 +232,7 @@ const [endOfDayModal, setEndOfDayModal] = useState(false);
       gameLost: false
     }));
 
-    setPowerAttributes(prevState => ({
-      ...prevState,
-        startingCoins: 5, 
-        cdjBonus: 2,
-        trashBonus: 1, 
-        numOfPowers: 3,
-        dice: 6 
-    }));
-
+    
     updatePoolDifficulties();
     setActivePools(prevPools => 
       prevPools.map(pool => ({
