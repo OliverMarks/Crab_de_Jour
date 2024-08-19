@@ -198,12 +198,12 @@ const [endOfDayModal, setEndOfDayModal] = useState(false);
 
     setPowerAttributes(prevState => ({
       ...prevState,
-        startingCoins: 5, 
-        cdjBonus: 2,
-        trashBonus: 1, 
-        numOfPowers: 3,
-        dice: 6, 
-        crabs:[]
+        startingCoins: prevState.startingCoins, 
+        cdjBonus: prevState.cdjBonus,
+        trashBonus: prevState.trashBonus, 
+        numOfPowers: prevState.numOfPowers,
+        dice: prevState.dice, 
+        crabs: prevState.crabs
     }));
 
 
