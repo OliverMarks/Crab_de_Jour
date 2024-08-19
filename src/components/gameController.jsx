@@ -191,6 +191,7 @@ const [endOfDayModal, setEndOfDayModal] = useState(false);
       setShop(getRandomCards(allCards, 9))
 
       setLocked(false)
+      setHasCaught(false)
     
   };
 
