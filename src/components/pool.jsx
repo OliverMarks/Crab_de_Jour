@@ -57,14 +57,14 @@ export default function Pool({ onClick, pool, className }) {
     >
 
       {isHovered ? <img
-          className='catch-image'
+          className='catch-image-hover'
           src={selectCrabImage(true, pool.poolDifficulty)}
           alt="Crab or trash"
         /> : null }
       {!isHovered || pool.rollSuccess !== undefined ? pool.poolDifficulty : null}
       {pool.rollSuccess !== undefined && !isHovered ? (
         <img
-          className='catch-image'
+          className='catch-image catch-disabled'
           src={selectCrabImage(pool.rollSuccess, pool.poolDifficulty)}
           alt="Crab or trash"
         />

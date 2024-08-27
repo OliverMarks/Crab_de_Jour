@@ -144,21 +144,21 @@ function App() {
 
 
     
-    useEffect(() => {
-      // This effect will run every time players.coins changes
-      const audio = new Audio(coinSound);
-      if (players.coins > 5) { // Check to prevent sound playing on initial render
-        audio.play();
-      }
-    }, [players.coins]);
+    // useEffect(() => {
+    //   // This effect will run every time players.coins changes
+    //   const audio = new Audio(coinSound);
+    //   if (players.coins > 5) { // Check to prevent sound playing on initial render
+    //     audio.play();
+    //   }
+    // }, [players.coins]);
 
-    useEffect(() => {
-      // This effect will run every time players.coins changes
-      const audio = new Audio(successSound);
-      if (players.crabs > 0) { // Check to prevent sound playing on initial render
-        audio.play();
-      }
-    }, [players.crabs]);
+    // useEffect(() => {
+    //   // This effect will run every time players.coins changes
+    //   const audio = new Audio(successSound);
+    //   if (players.crabs > 0) { // Check to prevent sound playing on initial render
+    //     audio.play();
+    //   }
+    // }, [players.crabs]);
   
     
    
